@@ -12,7 +12,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ViewFlipper;
 
 import com.flat20.fingerplay.socket.commands.midi.MidiNoteOff;
 import com.flat20.fingerplay.socket.commands.midi.MidiNoteOn;
@@ -24,6 +29,9 @@ import de.steinberg.usabilitylab.settings.SettingsView;
 
 public class MainActivity extends Activity {
 
+	private ViewFlipper flipper;
+	private  Animation slide_in_left, slide_out_right;
+	
 	private SettingsModel mSettingsModel;
 	private ActionBar actionBar;
 	private ConnectionManager mConnectionManager = ConnectionManager.getInstance();
@@ -36,7 +44,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fader_4);
+		setContentView(R.layout.viewflipper);
 		
 		// Fullscreen, Landscape and dimed SoftButtons on Activity
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -52,6 +60,11 @@ public class MainActivity extends Activity {
 		// load Server preferences
 		mSettingsModel = SettingsModel.getInstance();
 		mSettingsModel.init(this);
+		
+		flipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
+		flipper.setInAnimation(inFromRightAnimation());
+		flipper.setOutAnimation(outToLeftAnimation());
+
 		
 		// Handle Custom View Button Events
 	    Button btn_compare = (Button) actionBar.getCustomView().findViewById(R.id.button1);
@@ -85,21 +98,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				switch (i) {
-				case 0:
-					setContentView(R.layout.fader_4);
-					break;
-				case 1:
-					setContentView(R.layout.xypad_2);
-					break;
-				case 2:
-					setContentView(R.layout.fader1_xypad3);
-					i = -1;
-					break;
-				default:
-					break;
-				}
-				i++;
+				flipper.showNext();
 			}
 		});
 	}
@@ -128,6 +127,29 @@ public class MainActivity extends Activity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	protected Animation inFromRightAnimation() {
+		 
+        Animation inFromRight = new TranslateAnimation(
+                        Animation.RELATIVE_TO_PARENT, +1.0f,
+                        Animation.RELATIVE_TO_PARENT, 0.0f,
+                        Animation.RELATIVE_TO_PARENT, 0.0f,
+                        Animation.RELATIVE_TO_PARENT, 0.0f);
+        inFromRight.setDuration(1000);
+        //inFromRight.setInterpolator(new AccelerateInterpolator());
+        return inFromRight;
+	}
+
+	protected Animation outToLeftAnimation() {
+        Animation outtoLeft = new TranslateAnimation(
+                        Animation.RELATIVE_TO_PARENT, 0.0f,
+                        Animation.RELATIVE_TO_PARENT, -1.0f,
+                        Animation.RELATIVE_TO_PARENT, 0.0f,
+                        Animation.RELATIVE_TO_PARENT, 0.0f);
+        outtoLeft.setDuration(1000);
+        //outtoLeft.setInterpolator(new AccelerateInterpolator());
+        return outtoLeft;
 	}
 
 }

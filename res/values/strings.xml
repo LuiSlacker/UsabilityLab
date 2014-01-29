@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
- 
+
     <string name="app_name">Usability Lab</string>
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="question1">Which is your preferenced hand?</string>
+    <string name="question1_left">LEFT</string>
+    <string name="question1_right">RIGHT</string>
+    
+    <string name="question2">Please rate your satisfaction!</string>
+    <string name="question2_left">Poor</string>
+    <string name="question2_right">Excellent</string>
+    
+    <string name="question3">overall Usability</string>
+    <string name="question3_left">Shit</string>
+    <string name="question3_right">Amazing</string>
+    
+   	<string name="question4">Another Promt</string>
+    <string name="question4_left">Noo</string>
+    <string name="question4_right">Nice</string>
 
-     
- 
 </resources>

@@ -39,8 +39,8 @@ public class MainActivity extends Activity {
 	final private MidiNoteOff mNoteOff = new MidiNoteOff();
 	
 	private int comparing_count = 0;
-	private int i = 1;
-	
+	private double time;
+	private  double[] times = new double[4];
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,7 +55,6 @@ public class MainActivity extends Activity {
 		// insert custom View in ActionBar
 		actionBar = getActionBar();
 		actionBar.setCustomView(R.layout.custom_actionbar);
-		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
 		
 		// load Server preferences
 		mSettingsModel = SettingsModel.getInstance();
@@ -98,7 +97,36 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				times[0] = System.currentTimeMillis()-time;
 				flipper.showNext();
+			}
+		});
+        
+        Button btn_start = (Button) findViewById(R.id.btn_start);
+        btn_start.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				flipper.showNext();
+			}
+		});
+        
+        Button btn_q_end = (Button) findViewById(R.id.questionare_send);
+        btn_q_end.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				flipper.showNext();
+			}
+		});
+        
+        Button btn_4slider_intro = (Button) findViewById(R.id.btn_4slider_intro);
+        btn_4slider_intro.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				flipper.showNext();
+				actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
 			}
 		});
 	}
@@ -129,6 +157,7 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+	//ViewFlipper Animations
 	protected Animation inFromRightAnimation() {
 		 
         Animation inFromRight = new TranslateAnimation(
@@ -141,6 +170,7 @@ public class MainActivity extends Activity {
         return inFromRight;
 	}
 
+	//ViewFlipper Animations
 	protected Animation outToLeftAnimation() {
         Animation outtoLeft = new TranslateAnimation(
                         Animation.RELATIVE_TO_PARENT, 0.0f,

@@ -115,18 +115,51 @@ containing a value of this type.
         public static final int midi_white=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000c;
+        public static final int action_settings=0x7f0a002d;
+        public static final int btn_4slider_intro=0x7f0a0024;
+        public static final int btn_start=0x7f0a0005;
         public static final int button1=0x7f0a0001;
         public static final int button2=0x7f0a0002;
+        public static final int button3=0x7f0a001e;
+        public static final int button4=0x7f0a0020;
         public static final int container=0x7f0a0000;
-        public static final int fader1=0x7f0a0004;
-        public static final int fader2=0x7f0a0005;
-        public static final int fader3=0x7f0a0006;
-        public static final int fader4=0x7f0a0007;
-        public static final int fader5=0x7f0a000a;
-        public static final int pad1=0x7f0a0008;
-        public static final int pad2=0x7f0a0009;
-        public static final int pad3=0x7f0a000b;
+        public static final int fader1=0x7f0a0025;
+        public static final int fader2=0x7f0a0026;
+        public static final int fader3=0x7f0a0027;
+        public static final int fader4=0x7f0a0028;
+        public static final int fader5=0x7f0a002b;
+        public static final int pad1=0x7f0a0029;
+        public static final int pad2=0x7f0a002a;
+        public static final int pad3=0x7f0a002c;
+        public static final int question1=0x7f0a000a;
+        public static final int question1_left=0x7f0a000c;
+        public static final int question1_right=0x7f0a0010;
+        public static final int question2=0x7f0a0011;
+        public static final int question2_left=0x7f0a0012;
+        public static final int question2_right=0x7f0a0016;
+        public static final int question3=0x7f0a0017;
+        public static final int question3_left=0x7f0a0018;
+        public static final int question3_right=0x7f0a0019;
+        public static final int question4=0x7f0a001a;
+        public static final int question4_left=0x7f0a001b;
+        public static final int question4_right=0x7f0a001c;
+        public static final int questionare_send=0x7f0a0022;
+        public static final int radio0=0x7f0a000e;
+        public static final int radio1=0x7f0a000f;
+        public static final int radio2=0x7f0a0013;
+        public static final int radio3=0x7f0a0014;
+        public static final int radio4=0x7f0a0015;
+        public static final int radioGroup1=0x7f0a000d;
+        public static final int scrollView1=0x7f0a0007;
+        public static final int tableLayout1=0x7f0a0008;
+        public static final int tableRow1=0x7f0a0009;
+        public static final int tableRow2=0x7f0a000b;
+        public static final int tableRow3=0x7f0a001d;
+        public static final int tableRow4=0x7f0a001f;
+        public static final int tableRow5=0x7f0a0021;
+        public static final int textView1=0x7f0a0004;
+        public static final int textView2=0x7f0a0006;
+        public static final int textViewd1=0x7f0a0023;
         public static final int viewFlipper1=0x7f0a0003;
     }
     public static final class layout {
@@ -143,6 +176,18 @@ containing a value of this type.
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
         public static final int hello_world=0x7f070003;
+        public static final int question1=0x7f070004;
+        public static final int question1_left=0x7f070005;
+        public static final int question1_right=0x7f070006;
+        public static final int question2=0x7f070007;
+        public static final int question2_left=0x7f070008;
+        public static final int question2_right=0x7f070009;
+        public static final int question3=0x7f07000a;
+        public static final int question3_left=0x7f07000b;
+        public static final int question3_right=0x7f07000c;
+        public static final int question4=0x7f07000d;
+        public static final int question4_left=0x7f07000e;
+        public static final int question4_right=0x7f07000f;
     }
     public static final class style {
         /** 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="de.steinberg.navi.Pad1">	    			
+    	<attr name="channel" format="integer" />
+    	<attr name="controllerNumber_x" format="integer" />
+    	<attr name="controllerNumber_y" format="integer" />
+    	<attr name="controllerNumber_z" format="integer" />
+    	<attr name="controllerNumber_accel" format="integer" />
+    	<attr name="acceleration" format="boolean" />
+    	<attr name="drawbackground" format="boolean" />
+	</declare-styleable>
+	
+	<declare-styleable name="de.steinberg.navi.Fader">	    			
+    	<attr name="channelFader" format="integer" />
+    	<attr name="controllerNumber" format="integer" />
+	</declare-styleable>
+</resources>

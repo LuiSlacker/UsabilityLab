@@ -1,10 +1,15 @@
 package de.steinberg.usabilitylab;
 
+import java.util.ArrayList;
+
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -12,11 +17,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.WindowManager;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.flat20.fingerplay.socket.commands.midi.MidiNoteOff;
@@ -27,7 +33,7 @@ import de.steinberg.usabilitylab.settings.SettingsModel;
 import de.steinberg.usabilitylab.settings.SettingsView;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener{
 
 	private ViewFlipper flipper;
 	private  Animation slide_in_left, slide_out_right;
@@ -40,7 +46,11 @@ public class MainActivity extends Activity {
 	
 	private int comparing_count = 0;
 	private double time;
-	private  double[] times = new double[4];
+	private ArrayList<Integer> comparing = new ArrayList<Integer>();
+	private  ArrayList<Double> times = new ArrayList<Double>();
+	private ArrayList<RadioGroup> rGroup = new ArrayList<RadioGroup>();
+	private ArrayList<Object> rButton = new ArrayList<Object>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -60,13 +70,14 @@ public class MainActivity extends Activity {
 		mSettingsModel = SettingsModel.getInstance();
 		mSettingsModel.init(this);
 		
+		// set ViewFlipper and connect animations
 		flipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
 		flipper.setInAnimation(inFromRightAnimation());
 		flipper.setOutAnimation(outToLeftAnimation());
 
 		
-		// Handle Custom View Button Events
-	    Button btn_compare = (Button) actionBar.getCustomView().findViewById(R.id.button1);
+		// handle ActionBars Custom View Compare Button Events
+	    Button btn_compare = (Button) actionBar.getCustomView().findViewById(R.id.btn_compare);
         btn_compare.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
@@ -91,44 +102,48 @@ public class MainActivity extends Activity {
 				return false;
 			}
 		});
+       
+       // connect onClickListeners 
+       Button btn_done = (Button) actionBar.getCustomView().findViewById(R.id.btn_done);
+       btn_done.setOnClickListener(this);
         
-        Button btn_done = (Button) actionBar.getCustomView().findViewById(R.id.button2);
-        btn_done.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				times[0] = System.currentTimeMillis()-time;
-				flipper.showNext();
-			}
-		});
+       Button btn_start = (Button) findViewById(R.id.btn_start);
+       btn_start.setOnClickListener(this);
         
-        Button btn_start = (Button) findViewById(R.id.btn_start);
-        btn_start.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				flipper.showNext();
-			}
-		});
+       Button btn_questionare_end = (Button) findViewById(R.id.questionare_send);
+       btn_questionare_end.setOnClickListener(this);
         
-        Button btn_q_end = (Button) findViewById(R.id.questionare_send);
-        btn_q_end.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				flipper.showNext();
-			}
-		});
-        
-        Button btn_4slider_intro = (Button) findViewById(R.id.btn_4slider_intro);
-        btn_4slider_intro.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				flipper.showNext();
-				actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
-			}
-		});
+       Button btn_4slider_intro = (Button) findViewById(R.id.btn_4slider_intro);
+       btn_4slider_intro.setOnClickListener(this);
+       
+       Button btn_4slider_rating = (Button) findViewById(R.id.btn_fader4_rating);
+       btn_4slider_rating.setOnClickListener(this);
+       
+       Button btn_2xypads_intro = (Button) findViewById(R.id.btn_2xypads_intro);
+       btn_2xypads_intro.setOnClickListener(this);
+       
+       Button btn_2xypads_rating = (Button) findViewById(R.id.btn_xypad_2_rating);
+       btn_2xypads_rating.setOnClickListener(this);
+       
+       Button btn_fader_xypad_intro = (Button) findViewById(R.id.btn_fader_xypad_intro);
+       btn_fader_xypad_intro.setOnClickListener(this);
+       
+       Button btn_fader_xypad_rating = (Button) findViewById(R.id.btn_fader_xypad_rating);
+       btn_fader_xypad_rating.setOnClickListener(this);
+       
+       //push RadioGroups into ArrayList 
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup1));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup2));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup3));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup4));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup5));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup6));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup7));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup8));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup9));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup10));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup11));
+       rGroup.add((RadioGroup) findViewById(R.id.radioGroup12));
 	}
 	
 	@Override
@@ -139,7 +154,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
+		// Inflate the menu
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
@@ -166,7 +181,6 @@ public class MainActivity extends Activity {
                         Animation.RELATIVE_TO_PARENT, 0.0f,
                         Animation.RELATIVE_TO_PARENT, 0.0f);
         inFromRight.setDuration(1000);
-        //inFromRight.setInterpolator(new AccelerateInterpolator());
         return inFromRight;
 	}
 
@@ -178,8 +192,119 @@ public class MainActivity extends Activity {
                         Animation.RELATIVE_TO_PARENT, 0.0f,
                         Animation.RELATIVE_TO_PARENT, 0.0f);
         outtoLeft.setDuration(1000);
-        //outtoLeft.setInterpolator(new AccelerateInterpolator());
         return outtoLeft;
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btn_start:
+			flipper.showNext();
+			break;
+		case R.id.questionare_send:
+			flipper.showNext();
+			break;
+		case R.id.btn_4slider_intro:
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
+			flipper.showNext();
+			time = System.currentTimeMillis();
+			break;
+		case R.id.btn_fader4_rating:
+			if (analyseRating() == true) {
+				resetRadioButtons();
+				flipper.showNext();
+			} else {
+				showAlert("Please rate all statements!");
+			}
+			rButton.clear();
+			break;
+		case R.id.btn_2xypads_intro:
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
+			flipper.showNext();
+			time = System.currentTimeMillis();
+			break;
+		case R.id.btn_xypad_2_rating:
+			if (analyseRating()) {
+				resetRadioButtons();
+				flipper.showNext();
+			} else {
+				showAlert("Please rate all statements!");
+			}
+			rButton.clear();
+			break;
+		case R.id.btn_fader_xypad_intro:
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
+			flipper.showNext();
+			time = System.currentTimeMillis();
+			break;
+		case R.id.btn_fader_xypad_rating:
+			if (analyseRating() == true) {
+				resetRadioButtons();
+				flipper.showNext();
+			} else {
+				showAlert("Please rate all statements!");
+			}
+			rButton.clear();
+			break;
+		case R.id.btn_done:
+			times.add(System.currentTimeMillis()-time);
+			comparing.add(comparing_count);
+			flipper.showNext();
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
+			comparing_count = 0;
+			Log.d("list", String.valueOf(comparing));
+			Log.d("list", String.valueOf(times));
+			break;
+		default:
+			break;
+		}
+	}
+	
+	
+	private void showAlert(String string) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(string);
+		builder.setCancelable(false);
+		builder.setPositiveButton("OK", new  DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+		AlertDialog alert = builder.create();
+		alert.show();
+	}
+
+	private boolean analyseRating() {
+		// fill Tag-Object ArrayList with selection in each RadioGroup
+		for (RadioGroup radioGroup:rGroup){
+			rButton.add(findselectedRadioButton(radioGroup));
+		}
+		Log.d("list", String.valueOf(rButton));
+		// if one RadioGroup has no selected RadioButton return false
+		
+		return !rButton.contains(null);
+		
+		//if (rButton.contains(null)){
+		//	return false;
+		//} else return true;
+	}
+
+	private Object findselectedRadioButton(RadioGroup rGroup) {
+		//get selected RedioButtonID
+		int selectedId =  rGroup.getCheckedRadioButtonId();
+		//if selection exists --> return tag --otherwise return null
+		if (selectedId != -1) {
+			RadioButton rB = (RadioButton) findViewById(selectedId);
+			return rB.getTag();
+		} else return null; 
+	}
+	
+	private void resetRadioButtons() {
+		for (RadioGroup radioGroup:rGroup){
+			radioGroup.clearCheck();
+		}
 	}
 
 }

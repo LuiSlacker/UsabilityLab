@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <de.steinberg.usabilitylab.Fader
+        android:id="@+id/fader1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/list_background"
+        custom:channelFader="3"
+        custom:controllerNumber="9" />
+
+    <de.steinberg.usabilitylab.Fader
+        android:id="@+id/fader2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dip"
+        android:layout_weight="1"
+        android:background="@color/list_background"
+        custom:channelFader="3"
+        custom:controllerNumber="10" />
+
+    <de.steinberg.usabilitylab.Fader
+        android:id="@+id/fader3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dip"
+        android:layout_weight="1"
+        android:background="@color/list_background"
+        custom:channelFader="3"
+        custom:controllerNumber="11" />
+
+    <de.steinberg.usabilitylab.Fader
+        android:id="@+id/fader4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dip"
+        android:layout_weight="1"
+        android:background="@color/list_background"
+        custom:channelFader="3"
+        custom:controllerNumber="12" />
+
+</LinearLayout>

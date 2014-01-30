@@ -5,7 +5,7 @@
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_compare"
         android:layout_width="300dip"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
@@ -14,7 +14,7 @@
         android:text="COMPARE" />
     
     <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_done"
             android:layout_width="300dip"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"

@@ -5,21 +5,31 @@
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
     <string name="hello_world">Hello world!</string>
-    
-    <string name="question1">Which is your preferenced hand?</string>
-    <string name="question1_left">LEFT</string>
-    <string name="question1_right">RIGHT</string>
-    
-    <string name="question2">Please rate your satisfaction!</string>
-    <string name="question2_left">Poor</string>
-    <string name="question2_right">Excellent</string>
-    
-    <string name="question3">overall Usability</string>
-    <string name="question3_left">Shit</string>
-    <string name="question3_right">Amazing</string>
-    
-   	<string name="question4">Another Promt</string>
-    <string name="question4_left">Noo</string>
-    <string name="question4_right">Nice</string>
+
+    <!-- Ratings -->
+	    <string name="rating_title">Please rate your agreement with these statements!</string>
+	    <string name="rating_subtitle">- concerning the previous Interface -</string>
+	    <string name="anchor_left">strongly disagree</string>
+	    <string name="anchor_right">strongly agree</string>
+	
+	    <!-- Usefulness -->
+	    <string name="question1">It helps me be more productive.</string>
+	    <string name="question2">It saves me time when i use it.</string>
+	    <string name="question3">It is useful.</string>
+	
+	    <!-- Ease of use -->
+	    <string name="question4">It is easy to use.</string>
+	    <string name="question5">I can use it successfully every time.</string>
+	    <string name="question6">Using it is effortless.</string>
+	
+	    <!-- Ease of Learning -->
+	    <string name="question7">I learned to use it quickly.</string>
+	    <string name="question8">It is easy to learn to use it.</string>
+	    <string name="question9">I easily remember how to use it.</string>
+	
+	    <!-- Satisfaction -->
+	    <string name="question10">I am satisfied with it.</string>
+	    <string name="question11">It is fun to use.</string>
+	    <string name="question12">I feel I need to have it.</string>
 
 </resources>

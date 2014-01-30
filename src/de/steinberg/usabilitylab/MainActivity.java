@@ -144,6 +144,8 @@ public class MainActivity extends Activity implements OnClickListener{
        rGroup.add((RadioGroup) findViewById(R.id.radioGroup10));
        rGroup.add((RadioGroup) findViewById(R.id.radioGroup11));
        rGroup.add((RadioGroup) findViewById(R.id.radioGroup12));
+       
+       
 	}
 	
 	@Override
@@ -301,10 +303,10 @@ public class MainActivity extends Activity implements OnClickListener{
 		} else return null; 
 	}
 	
-	private void resetRadioButtons() {
+	/*private void resetRadioButtons() {
 		for (RadioGroup radioGroup:rGroup){
 			radioGroup.clearCheck();
 		}
-	}
+	}*/
 
 }

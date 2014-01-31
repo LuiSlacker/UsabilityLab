@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<de.steinberg.usabilitylab.InterfaceResult xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
@@ -13,7 +13,7 @@
         <include layout="@layout/rating" />
 
         <Button
-            android:id="@+id/btn_fader_xypad_rating"
+            android:id="@+id/btn_interface_result"
             android:layout_width="200dip"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -23,4 +23,4 @@
             android:text="SEND" />
     </LinearLayout>
 
-</ScrollView>
+</de.steinberg.usabilitylab.InterfaceResult>

@@ -8,44 +8,66 @@
     <!-- STARTSCREEN -->
     <include layout="@layout/startscreen" />
 
-    
     <!-- Initial Questionare -->
     <include layout="@layout/questionare" />
 
-    
-    <!-- 4 Fader Interface Intro -->
-    <include layout="@layout/fader_4_intro" />
+    <!-- *******************************************
+    ** Custom ViewFlipper 4 Fader
+    ************************************************ -->
+    <de.steinberg.usabilitylab.InterfaceViewFlipper
+        android:id="@+id/interfaceViewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-    
-    <!-- 4 Fader Interface -->
-    <include layout="@layout/fader_4" />
-    
-    
-    <!-- 4 Fader Rating -->
-  	<include layout="@layout/fader_4_rating" />
-    
-    
-    <!-- 2 XYPads Interface Intro -->
-    <include layout="@layout/xypad_2_intro" />
+        <!-- 4 Fader Interface Intro -->
+        <include layout="@layout/fader_4_intro" />
 
-    
-    <!-- 2 XYPads Interface -->
-    <include layout="@layout/xypad_2" />
-    
-    
-    <!-- 2 XYPads Rating -->
-    <include layout="@layout/xypad_2_rating" />
-    
-    
-    <!-- Fader + XYPAD Interface Intro -->
-    <include layout="@layout/fader_xypad_intro" />
+        <!-- 4 Fader Interface -->
+        <include layout="@layout/fader_4" />
 
+        <!-- 4 Fader Rating -->
+        <include layout="@layout/fader_4_rating" />
+        
+    </de.steinberg.usabilitylab.InterfaceViewFlipper>
+
+     <!-- *******************************************
+    ** Custom ViewFlipper 2 XYPads
+    ************************************************ -->
+ 	    <de.steinberg.usabilitylab.InterfaceViewFlipper
+ 	    android:id="@+id/interfaceViewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 2 XYPads Interface Intro -->
+        <include layout="@layout/xypad_2_intro" />
+
+        <!-- 2 XYPads Interface -->
+        <include layout="@layout/xypad_2" />
+
+        <!-- 2 XYPads Rating -->
+        <include layout="@layout/xypad_2_rating" />
+        
+    </de.steinberg.usabilitylab.InterfaceViewFlipper>
     
-    <!-- Fader + XYPAD Interface -->
-    <include layout="@layout/fader_xypad" />
     
-    
-	<!-- Fader + XYPAD Rating -->
-    <include layout="@layout/fader_xypad_rating" />
+	<!-- *******************************************
+    ** Custom ViewFlipper Fader+ XYPad
+    ************************************************ -->
+    <de.steinberg.usabilitylab.InterfaceViewFlipper
+        android:id="@+id/interfaceViewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- Fader + XYPAD Interface Intro -->
+        <include layout="@layout/fader_xypad_intro" />
+
+        <!-- Fader + XYPAD Interface -->
+        <include layout="@layout/fader_xypad" />
+
+        <!-- Fader + XYPAD Rating -->
+        <include layout="@layout/fader_xypad_rating" />
+        
+    </de.steinberg.usabilitylab.InterfaceViewFlipper>
+   
 
 </ViewFlipper>

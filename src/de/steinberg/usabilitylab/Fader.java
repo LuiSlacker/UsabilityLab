@@ -53,17 +53,17 @@ public class Fader extends View{
 		/******************************************************************************************
 		 ** Parse ControllerNumber from custom XMl
 		 ******************************************************************************************/
-		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.de_steinberg_navi_Fader);
+		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.de_steinberg_usabilitylab_Fader);
 						
 		final int N = a.getIndexCount();
 		for (int i = 0; i < N; ++i) {
 		    int attr = a.getIndex(i);
 		    switch (attr) {
-		    	case R.styleable.de_steinberg_navi_Fader_channelFader:
+		    	case R.styleable.de_steinberg_usabilitylab_Fader_channelFader:
 		            channel = a.getInt(attr, 0);
 //		            Log.d("Pad", "Channel: " + channelNumber);
 		            break;
-		        case R.styleable.de_steinberg_navi_Fader_controllerNumber:
+		        case R.styleable.de_steinberg_usabilitylab_Fader_controllerNumber:
 		            controllerNumber = a.getInt(attr, 0);
 //		            Log.d("Pad", "Controller Number: " + controllerNumber);
 		            break;

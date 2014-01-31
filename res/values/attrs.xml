@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<declare-styleable name="de.steinberg.navi.Pad1">	    			
+	<declare-styleable name="de.steinberg.usabilitylab.Pad1">	    			
     	<attr name="channel" format="integer" />
     	<attr name="controllerNumber_x" format="integer" />
     	<attr name="controllerNumber_y" format="integer" />
@@ -10,8 +10,12 @@
     	<attr name="drawbackground" format="boolean" />
 	</declare-styleable>
 	
-	<declare-styleable name="de.steinberg.navi.Fader">	    			
+	<declare-styleable name="de.steinberg.usabilitylab.Fader">	    			
     	<attr name="channelFader" format="integer" />
     	<attr name="controllerNumber" format="integer" />
+	</declare-styleable>
+	
+	<declare-styleable name="de.steinberg.usabilitylab.InterfaceResult">
+	    <attr name="interfaceName" format="string"/>
 	</declare-styleable>
 </resources>

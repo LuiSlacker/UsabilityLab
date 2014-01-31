@@ -66,37 +66,37 @@ public class Pad1 extends View implements SensorEventListener{
 		/******************************************************************************************
 		 ** Parse ControllerNumber from custom XMl
 		 ******************************************************************************************/
-		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.de_steinberg_navi_Pad1);
+		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.de_steinberg_usabilitylab_Pad1);
 						
 		final int N = a.getIndexCount();
 		for (int i = 0; i < N; ++i) {
 		    int attr = a.getIndex(i);
 		    switch (attr) {
-		    	case R.styleable.de_steinberg_navi_Pad1_channel:
+		    	case R.styleable.de_steinberg_usabilitylab_Pad1_channel:
 		            channelNumber = a.getInt(attr, 0);
 //		            Log.d("Pad", "Channel: " + channelNumber);
 		            break;
-		        case R.styleable.de_steinberg_navi_Pad1_controllerNumber_x:
+		        case R.styleable.de_steinberg_usabilitylab_Pad1_controllerNumber_x:
 		            controllerNumber_x = a.getInt(attr, 0);
 //		            Log.d("Pad", "Controller Number: " + controllerNumber);
 		            break;
-		        case R.styleable.de_steinberg_navi_Pad1_controllerNumber_y:
+		        case R.styleable.de_steinberg_usabilitylab_Pad1_controllerNumber_y:
 		            controllerNumber_y = a.getInt(attr, 0);
 //		            Log.d("Pad", "Controller Number: " + controllerNumber);
 		            break;
-		        case R.styleable.de_steinberg_navi_Pad1_controllerNumber_z:
+		        case R.styleable.de_steinberg_usabilitylab_Pad1_controllerNumber_z:
 		            controllerNumber_z = a.getInt(attr, 0);
 //		            Log.d("Pad", "Controller Number: " + controllerNumber);
 		            break;
-		        case R.styleable.de_steinberg_navi_Pad1_controllerNumber_accel:
+		        case R.styleable.de_steinberg_usabilitylab_Pad1_controllerNumber_accel:
 		            controllerNumber_accel = a.getInt(attr, 0);
 		            Log.d("Pad", "Controller Number: " + controllerNumber_accel);
 		            break;
-		        case R.styleable.de_steinberg_navi_Pad1_acceleration:
+		        case R.styleable.de_steinberg_usabilitylab_Pad1_acceleration:
 		            acceleration = a.getBoolean(attr, true);
 		            Log.d("Pad", "Acceleration? " + acceleration);
 		            break;
-		        case R.styleable.de_steinberg_navi_Pad1_drawbackground:
+		        case R.styleable.de_steinberg_usabilitylab_Pad1_drawbackground:
 		            drawbackground = a.getBoolean(attr, true);
 		            Log.d("Pad", "drawbg? " + drawbackground);
 		            break;

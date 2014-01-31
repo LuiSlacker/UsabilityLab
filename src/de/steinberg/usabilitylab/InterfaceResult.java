@@ -2,34 +2,48 @@ package de.steinberg.usabilitylab;
 
 import java.util.ArrayList;
 
+import android.R.attr;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.ViewFlipper;
 
-public class InterfaceResult extends ScrollView{
+public class InterfaceResult extends LinearLayout{
 
 	private ArrayList<RadioGroup> rGroup = new ArrayList<RadioGroup>();
 	private ArrayList<Object> rButton = new ArrayList<Object>();
+	private String interfaceName;
+	private Context mcontext;
+	private AttributeSet mattrs;
 	
 	public InterfaceResult(Context context) {
 		super(context);
+		init();
 	}
 	public InterfaceResult(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		mcontext = context;
+		mattrs = attrs;
+		init();
 	}
 	public InterfaceResult(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		init();
 	}
 
 	
+	private void init() {
+		parseInterfaceName();
+	}
 	@Override
 	protected void onAttachedToWindow() {
 		//push RadioGroups into ArrayList 
@@ -61,9 +75,30 @@ public class InterfaceResult extends ScrollView{
 				rButton.clear();
 			}
 		});
+	    
 		super.onAttachedToWindow();
 	}
 	
+	
+	/******************************************************************************************
+	 ** Parse ControllerNumber from custom XMl
+	 ******************************************************************************************/
+	private void parseInterfaceName() {
+		
+			TypedArray a = mcontext.obtainStyledAttributes(mattrs, R.styleable.de_steinberg_usabilitylab_InterfaceResult);
+							
+			final int N = a.getIndexCount();
+			for (int i = 0; i < N; ++i) {
+			    int attr = a.getIndex(i);
+			    switch (attr) {
+			    	case R.styleable.de_steinberg_usabilitylab_InterfaceResult_interfaceName:
+			    		interfaceName = a.getString(attr);
+			            break;
+			    }
+			}
+			a.recycle();
+			Log.d("INsdf", String.valueOf(interfaceName));
+	}
 	private boolean analyseRating() {
 		// fill Tag-Object ArrayList with selection in each RadioGroup
 		for (RadioGroup radioGroup:rGroup){

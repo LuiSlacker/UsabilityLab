@@ -11,10 +11,10 @@
     <!-- Initial Questionare -->
     <include layout="@layout/questionare" />
 
-    <!-- *******************************************
-    ** Custom ViewFlipper 4 Fader
-    ************************************************ -->
-    <de.steinberg.usabilitylab.InterfaceViewFlipper
+    <!--
+    *******************************************
+    ** Custom ViewFlipper 2 XYPads
+    ************************************************ -->    <de.steinberg.usabilitylab.InterfaceViewFlipper
         android:id="@+id/interfaceViewFlipper"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -26,15 +26,23 @@
         <include layout="@layout/fader_4" />
 
         <!-- 4 Fader Rating -->
-        <include layout="@layout/fader_4_rating" />
-        
+        <de.steinberg.usabilitylab.InterfaceResult
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            custom:interfaceName="4Fader" >
+            
+            <include layout="@layout/rating" />
+            
+        </de.steinberg.usabilitylab.InterfaceResult>
     </de.steinberg.usabilitylab.InterfaceViewFlipper>
 
-     <!-- *******************************************
+    <!--
+    *******************************************
     ** Custom ViewFlipper 2 XYPads
     ************************************************ -->
- 	    <de.steinberg.usabilitylab.InterfaceViewFlipper
- 	    android:id="@+id/interfaceViewFlipper"
+    <de.steinberg.usabilitylab.InterfaceViewFlipper
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
@@ -45,16 +53,23 @@
         <include layout="@layout/xypad_2" />
 
         <!-- 2 XYPads Rating -->
-        <include layout="@layout/xypad_2_rating" />
-        
+        <de.steinberg.usabilitylab.InterfaceResult
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            custom:interfaceName="2XYPads" >
+
+            <include layout="@layout/rating" />
+            
+        </de.steinberg.usabilitylab.InterfaceResult>
     </de.steinberg.usabilitylab.InterfaceViewFlipper>
-    
-    
-	<!-- *******************************************
-    ** Custom ViewFlipper Fader+ XYPad
+
+    <!--
+    *******************************************
+    ** Custom ViewFlipper Fader + XYPad
     ************************************************ -->
+
     <de.steinberg.usabilitylab.InterfaceViewFlipper
-        android:id="@+id/interfaceViewFlipper"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
@@ -65,9 +80,15 @@
         <include layout="@layout/fader_xypad" />
 
         <!-- Fader + XYPAD Rating -->
-        <include layout="@layout/fader_xypad_rating" />
-        
+        <de.steinberg.usabilitylab.InterfaceResult
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            custom:interfaceName="Fader + XYPad" >
+
+            <include layout="@layout/rating" />
+            
+        </de.steinberg.usabilitylab.InterfaceResult>
     </de.steinberg.usabilitylab.InterfaceViewFlipper>
-   
 
 </ViewFlipper>

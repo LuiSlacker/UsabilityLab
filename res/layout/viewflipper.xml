@@ -20,7 +20,13 @@
         android:layout_height="match_parent" >
 
         <!-- 4 Fader Interface Intro -->
-        <include layout="@layout/fader_4_intro" />
+        <de.steinberg.usabilitylab.InterfaceIntro
+   		android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	custom:interfaceName="4 Fader" >
+    	
+        	<include layout="@layout/interface_intro" />
+        </de.steinberg.usabilitylab.InterfaceIntro>
 
         <!-- 4 Fader Interface -->
         <include layout="@layout/fader_4" />
@@ -33,7 +39,7 @@
             android:orientation="vertical"
             custom:interfaceName="4Fader" >
             
-            <include layout="@layout/rating" />
+            <include layout="@layout/interface_result" />
             
         </de.steinberg.usabilitylab.InterfaceResult>
     </de.steinberg.usabilitylab.InterfaceViewFlipper>
@@ -47,7 +53,13 @@
         android:layout_height="match_parent" >
 
         <!-- 2 XYPads Interface Intro -->
-        <include layout="@layout/xypad_2_intro" />
+        <de.steinberg.usabilitylab.InterfaceIntro
+   		android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	custom:interfaceName="2 XYPads" >
+    	
+        	<include layout="@layout/interface_intro" />
+        </de.steinberg.usabilitylab.InterfaceIntro>
 
         <!-- 2 XYPads Interface -->
         <include layout="@layout/xypad_2" />
@@ -59,7 +71,7 @@
             android:orientation="vertical"
             custom:interfaceName="2XYPads" >
 
-            <include layout="@layout/rating" />
+            <include layout="@layout/interface_result" />
             
         </de.steinberg.usabilitylab.InterfaceResult>
     </de.steinberg.usabilitylab.InterfaceViewFlipper>
@@ -74,7 +86,13 @@
         android:layout_height="match_parent" >
 
         <!-- Fader + XYPAD Interface Intro -->
-        <include layout="@layout/fader_xypad_intro" />
+        <de.steinberg.usabilitylab.InterfaceIntro
+   		android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	custom:interfaceName="Fader + XYPad" >
+    	
+        	<include layout="@layout/interface_intro" />
+        </de.steinberg.usabilitylab.InterfaceIntro>
 
         <!-- Fader + XYPAD Interface -->
         <include layout="@layout/fader_xypad" />
@@ -86,7 +104,40 @@
             android:orientation="vertical"
             custom:interfaceName="Fader + XYPad" >
 
-            <include layout="@layout/rating" />
+            <include layout="@layout/interface_result" />
+            
+        </de.steinberg.usabilitylab.InterfaceResult>
+    </de.steinberg.usabilitylab.InterfaceViewFlipper>
+    
+    <!--
+    *******************************************
+    ** Custom ViewFlipper Light + XYPad
+    ************************************************ -->
+
+    <de.steinberg.usabilitylab.InterfaceViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- Fader + XYPAD Interface Intro -->
+        <de.steinberg.usabilitylab.InterfaceIntro
+   		android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	custom:interfaceName="Light + XYPad" >
+    	
+        	<include layout="@layout/interface_intro" />
+        </de.steinberg.usabilitylab.InterfaceIntro>
+
+        <!-- Fader + XYPAD Interface -->
+        <include layout="@layout/fader_xypad" />
+
+        <!-- Fader + XYPAD Rating -->
+        <de.steinberg.usabilitylab.InterfaceResult
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            custom:interfaceName="Light + XYPad" >
+
+            <include layout="@layout/interface_result" />
             
         </de.steinberg.usabilitylab.InterfaceResult>
     </de.steinberg.usabilitylab.InterfaceViewFlipper>

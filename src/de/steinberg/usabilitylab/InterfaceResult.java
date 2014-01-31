@@ -99,6 +99,7 @@ public class InterfaceResult extends LinearLayout{
 			a.recycle();
 			Log.d("INsdf", String.valueOf(interfaceName));
 	}
+	
 	private boolean analyseRating() {
 		// fill Tag-Object ArrayList with selection in each RadioGroup
 		for (RadioGroup radioGroup:rGroup){

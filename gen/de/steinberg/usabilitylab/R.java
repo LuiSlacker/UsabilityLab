@@ -114,6 +114,7 @@ containing a value of this type.
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
+        public static final int questionare_marginTop=0x7f060003;
         public static final int radiobutton_margin_left=0x7f060002;
     }
     public static final class drawable {
@@ -121,15 +122,19 @@ containing a value of this type.
         public static final int ic_action_settings=0x7f020001;
         public static final int ic_action_volume_on=0x7f020002;
         public static final int ic_launcher=0x7f020003;
-        public static final int midi_white=0x7f020004;
+        public static final int ir=0x7f020004;
+        public static final int midi_white=0x7f020005;
+        public static final int qbig=0x7f020006;
+        public static final int qsmall=0x7f020007;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0045;
+        public static final int action_settings=0x7f0a0049;
         public static final int btn_compare=0x7f0a0001;
         public static final int btn_done=0x7f0a0002;
         public static final int btn_interface_intro=0x7f0a000a;
         public static final int btn_interface_result=0x7f0a003c;
-        public static final int btn_start=0x7f0a003f;
+        public static final int btn_questionare_send=0x7f0a0041;
+        public static final int btn_start=0x7f0a0043;
         public static final int container=0x7f0a0000;
         public static final int divider=0x7f0a000d;
         public static final int fader1=0x7f0a0003;
@@ -137,9 +142,12 @@ containing a value of this type.
         public static final int fader3=0x7f0a0005;
         public static final int fader4=0x7f0a0006;
         public static final int fader5=0x7f0a0007;
-        public static final int interfaceViewFlipper=0x7f0a0042;
-        public static final int pad1=0x7f0a0043;
-        public static final int pad2=0x7f0a0044;
+        public static final int imageView1=0x7f0a003e;
+        public static final int imageView2=0x7f0a003d;
+        public static final int imageView3=0x7f0a003f;
+        public static final int interfaceViewFlipper=0x7f0a0046;
+        public static final int pad1=0x7f0a0047;
+        public static final int pad2=0x7f0a0048;
         public static final int pad3=0x7f0a0008;
         public static final int question1=0x7f0a0010;
         public static final int question10=0x7f0a002d;
@@ -156,11 +164,11 @@ containing a value of this type.
         public static final int question4=0x7f0a0027;
         public static final int question4_left=0x7f0a0029;
         public static final int question4_right=0x7f0a002b;
+        public static final int question5=0x7f0a0040;
         public static final int question6=0x7f0a002f;
         public static final int question7=0x7f0a0031;
         public static final int question8=0x7f0a0033;
         public static final int question9=0x7f0a0035;
-        public static final int questionare_send=0x7f0a003d;
         public static final int radio0=0x7f0a0014;
         public static final int radio1=0x7f0a0015;
         public static final int radio2=0x7f0a0016;
@@ -189,11 +197,11 @@ containing a value of this type.
         public static final int tableRow7=0x7f0a0026;
         public static final int tableRow8=0x7f0a0028;
         public static final int tableRow9=0x7f0a002c;
-        public static final int textView1=0x7f0a003e;
-        public static final int textView2=0x7f0a0040;
+        public static final int textView1=0x7f0a0042;
+        public static final int textView2=0x7f0a0044;
         public static final int title=0x7f0a000b;
         public static final int txt_interface_intro=0x7f0a0009;
-        public static final int viewFlipper1=0x7f0a0041;
+        public static final int viewFlipper1=0x7f0a0045;
     }
     public static final class layout {
         public static final int custom_actionbar=0x7f030000;
@@ -213,34 +221,44 @@ containing a value of this type.
     public static final class string {
         public static final int action_about=0x7f070002;
         public static final int action_settings=0x7f070001;
-        public static final int anchor_left=0x7f070006;
-        public static final int anchor_right=0x7f070007;
+        public static final int anchor_left=0x7f07000e;
+        public static final int anchor_right=0x7f07000f;
         public static final int app_name=0x7f070000;
         public static final int hello_world=0x7f070003;
-        /**  Usefulness 
+        public static final int question1=0x7f070005;
+        public static final int question2=0x7f070006;
+        public static final int question3=0x7f070007;
+        public static final int question4=0x7f070008;
+        public static final int question5=0x7f070009;
+        public static final int question6=0x7f07000a;
+        public static final int question7=0x7f07000b;
+        /**  initial questionare 
          */
-        public static final int question1=0x7f070008;
-        /**  Satisfaction 
-         */
-        public static final int question10=0x7f070011;
-        public static final int question11=0x7f070012;
-        public static final int question12=0x7f070013;
-        public static final int question2=0x7f070009;
-        public static final int question3=0x7f07000a;
-        /**  Ease of use 
-         */
-        public static final int question4=0x7f07000b;
-        public static final int question5=0x7f07000c;
-        public static final int question6=0x7f07000d;
-        /**  Ease of Learning 
-         */
-        public static final int question7=0x7f07000e;
-        public static final int question8=0x7f07000f;
-        public static final int question9=0x7f070010;
-        public static final int rating_subtitle=0x7f070005;
+        public static final int questionare_title=0x7f070004;
+        public static final int rating_subtitle=0x7f07000d;
         /**  Ratings 
          */
-        public static final int rating_title=0x7f070004;
+        public static final int rating_title=0x7f07000c;
+        /**  Usefulness 
+         */
+        public static final int statement1=0x7f070010;
+        /**  Satisfaction 
+         */
+        public static final int statement10=0x7f070019;
+        public static final int statement11=0x7f07001a;
+        public static final int statement12=0x7f07001b;
+        public static final int statement2=0x7f070011;
+        public static final int statement3=0x7f070012;
+        /**  Ease of use 
+         */
+        public static final int statement4=0x7f070013;
+        public static final int statement5=0x7f070014;
+        public static final int statement6=0x7f070015;
+        /**  Ease of Learning 
+         */
+        public static final int statement7=0x7f070016;
+        public static final int statement8=0x7f070017;
+        public static final int statement9=0x7f070018;
     }
     public static final class style {
         /** 

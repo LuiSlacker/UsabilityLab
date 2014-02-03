@@ -105,11 +105,8 @@ public class MainActivity extends Activity implements OnClickListener{
         
        Button btn_start = (Button) findViewById(R.id.btn_start);
        btn_start.setOnClickListener(this);
-        
-       Button btn_questionare_end = (Button) findViewById(R.id.questionare_send);
-       btn_questionare_end.setOnClickListener(this);
 	}
-	
+        
 	@Override
 	protected void onResume() {
 		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
@@ -140,9 +137,6 @@ public class MainActivity extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_start:
-			flipper.showNext();
-			break;
-		case R.id.questionare_send:
 			flipper.showNext();
 			break;
 		case R.id.btn_done:

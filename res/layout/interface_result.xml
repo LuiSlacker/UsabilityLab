@@ -76,7 +76,7 @@
                         android:id="@+id/question1"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question1"
+                        android:text="@string/statement1"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -154,7 +154,7 @@
                         android:id="@+id/question2"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question2"
+                        android:text="@string/statement2"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -227,7 +227,7 @@
                         android:id="@+id/question3"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question3"
+                        android:text="@string/statement3"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -300,7 +300,7 @@
                         android:id="@+id/question4"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question4"
+                        android:text="@string/statement4"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -373,7 +373,7 @@
                         android:id="@+id/question10"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question5"
+                        android:text="@string/statement5"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -446,7 +446,7 @@
                         android:id="@+id/question6"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question6"
+                        android:text="@string/statement6"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -519,7 +519,7 @@
                         android:id="@+id/question7"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question7"
+                        android:text="@string/statement7"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -592,7 +592,7 @@
                         android:id="@+id/question8"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question8"
+                        android:text="@string/statement8"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -665,7 +665,7 @@
                         android:id="@+id/question9"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question9"
+                        android:text="@string/statement9"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -738,7 +738,7 @@
                         android:id="@+id/question10"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question10"
+                        android:text="@string/statement10"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -811,7 +811,7 @@
                         android:id="@+id/question11"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question11"
+                        android:text="@string/statement11"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 
@@ -884,7 +884,7 @@
                         android:id="@+id/question12"
                         android:layout_gravity="center_horizontal"
                         android:layout_span="3"
-                        android:text="@string/question12"
+                        android:text="@string/statement12"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
                 </TableRow>
 

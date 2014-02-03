@@ -40,8 +40,8 @@ public class InterfaceViewFlipper extends ViewFlipper {
 		if (this.getDisplayedChild() == this.getChildCount()-1){
 			ViewFlipper flipper = (ViewFlipper) getParent();
 			flipper.showNext();
-		} else{
+		} //else{
 			super.showNext();	
-		}
+//		}
 	}
 }

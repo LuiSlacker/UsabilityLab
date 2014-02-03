@@ -4,5 +4,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="radiobutton_margin_left">10dp</dimen>
+     <dimen name="questionare_marginTop">30dp</dimen>
 
 </resources>

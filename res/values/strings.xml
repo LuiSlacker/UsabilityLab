@@ -6,6 +6,16 @@
     <string name="action_about">About</string>
     <string name="hello_world">Hello world!</string>
 
+    <!-- initial questionare -->
+    	<string name="questionare_title">Please answer a few questions to get started!</string>
+    	<string name="question1">Which is your preferenced hand?</string>
+    	<string name="question2">How many hours do you spend using a DAW  in one month?</string>
+    	<string name="question3">Considering the following two figues, which one has the higher Q-factor?</string>
+    	<string name="question4">What corresponds to doubling the acoustic pressure? A change by ...</string>
+    	<string name="question5">The reverberation time describes the intervall within the acoustic pressure drops to the ... part of its original value.</string>
+    	<string name="question6">What corresponds to the distance between the early reflections within a room impulse response?</string>
+    	<string name="question7">A signal with a constant level of -20 db passes a compressor with ratio 1:3 and a threshold of -10 db. How will the level change?</string>
+    	
     <!-- Ratings -->
 	    <string name="rating_title">Please rate your agreement with these statements!</string>
 	    <string name="rating_subtitle">- concerning the previous Interface -</string>
@@ -13,23 +23,24 @@
 	    <string name="anchor_right">strongly agree</string>
 	
 	    <!-- Usefulness -->
-	    <string name="question1">It helps me be more productive.</string>
-	    <string name="question2">It saves me time when i use it.</string>
-	    <string name="question3">It is useful.</string>
+	    <string name="statement1">It helps me be more productive.</string>
+	    <string name="statement2">It saves me time when i use it.</string>
+	    <string name="statement3">It is useful.</string>
 	
 	    <!-- Ease of use -->
-	    <string name="question4">It is easy to use.</string>
-	    <string name="question5">I can use it successfully every time.</string>
-	    <string name="question6">Using it is effortless.</string>
+	    <string name="statement4">It is easy to use.</string>
+	    <string name="statement5">I can use it successfully every time.</string>
+	    <string name="statement6">Using it is effortless.</string>
 	
 	    <!-- Ease of Learning -->
-	    <string name="question7">I learned to use it quickly.</string>
-	    <string name="question8">It is easy to learn to use it.</string>
-	    <string name="question9">I easily remember how to use it.</string>
+	    <string name="statement7">I learned to use it quickly.</string>
+	    <string name="statement8">It is easy to learn to use it.</string>
+	    <string name="statement9">I easily remember how to use it.</string>
 	
 	    <!-- Satisfaction -->
-	    <string name="question10">I am satisfied with it.</string>
-	    <string name="question11">It is fun to use.</string>
-	    <string name="question12">I feel I need to have it.</string>
+	    <string name="statement10">I am satisfied with it.</string>
+	    <string name="statement11">It is fun to use.</string>
+	    <string name="statement12">I feel I need to have it.</string>
+	
 
 </resources>

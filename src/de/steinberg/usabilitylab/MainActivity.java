@@ -145,7 +145,7 @@ public class MainActivity extends Activity implements OnClickListener{
 			
 			// get active InterfaceViewFlipper and display next View
 			int inx = flipper.getDisplayedChild();
-			de.steinberg.usabilitylab.InterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.InterfaceViewFlipper) flipper.getChildAt(inx);
+			de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) flipper.getChildAt(inx);
 			interfaceViewFlipper.showNext();
 			
 			WriterSingleton.getInstance().writeToFile(String.valueOf(times),getApplicationContext());

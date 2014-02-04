@@ -10,7 +10,7 @@
     	<string name="questionare_title">Please answer a few questions to get started!</string>
     	<string name="question1">Which is your preferenced hand?</string>
     	<string name="question2">How many hours do you spend using a DAW  in one month?</string>
-    	<string name="question3">Considering the following two figues, which one has the higher Q-factor?</string>
+    	<string name="question3">Considering the following two EQs, which one has the higher Q-factor?</string>
     	<string name="question4">What corresponds to doubling the acoustic pressure? A change by ...</string>
     	<string name="question5">The reverberation time describes the intervall within the acoustic pressure drops to the ... part of its original value.</string>
     	<string name="question6">What corresponds to the distance between the early reflections within a room impulse response?</string>

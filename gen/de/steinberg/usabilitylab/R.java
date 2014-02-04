@@ -124,17 +124,19 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020003;
         public static final int ir=0x7f020004;
         public static final int midi_white=0x7f020005;
-        public static final int qbig=0x7f020006;
-        public static final int qsmall=0x7f020007;
+        public static final int quest_qhigh=0x7f020006;
+        public static final int quest_qhigh_checked=0x7f020007;
+        public static final int quest_qsmall=0x7f020008;
+        public static final int quest_qsmall_checked=0x7f020009;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0049;
+        public static final int action_settings=0x7f0a0047;
         public static final int btn_compare=0x7f0a0001;
         public static final int btn_done=0x7f0a0002;
         public static final int btn_interface_intro=0x7f0a000a;
         public static final int btn_interface_result=0x7f0a003c;
-        public static final int btn_questionare_send=0x7f0a0041;
-        public static final int btn_start=0x7f0a0043;
+        public static final int btn_questionare_send=0x7f0a003f;
+        public static final int btn_start=0x7f0a0041;
         public static final int container=0x7f0a0000;
         public static final int divider=0x7f0a000d;
         public static final int fader1=0x7f0a0003;
@@ -142,12 +144,10 @@ containing a value of this type.
         public static final int fader3=0x7f0a0005;
         public static final int fader4=0x7f0a0006;
         public static final int fader5=0x7f0a0007;
-        public static final int imageView1=0x7f0a003e;
-        public static final int imageView2=0x7f0a003d;
-        public static final int imageView3=0x7f0a003f;
-        public static final int interfaceViewFlipper=0x7f0a0046;
-        public static final int pad1=0x7f0a0047;
-        public static final int pad2=0x7f0a0048;
+        public static final int imageView3=0x7f0a003d;
+        public static final int interfaceViewFlipper=0x7f0a0044;
+        public static final int pad1=0x7f0a0045;
+        public static final int pad2=0x7f0a0046;
         public static final int pad3=0x7f0a0008;
         public static final int question1=0x7f0a0010;
         public static final int question10=0x7f0a002d;
@@ -164,7 +164,7 @@ containing a value of this type.
         public static final int question4=0x7f0a0027;
         public static final int question4_left=0x7f0a0029;
         public static final int question4_right=0x7f0a002b;
-        public static final int question5=0x7f0a0040;
+        public static final int question5=0x7f0a003e;
         public static final int question6=0x7f0a002f;
         public static final int question7=0x7f0a0031;
         public static final int question8=0x7f0a0033;
@@ -197,23 +197,25 @@ containing a value of this type.
         public static final int tableRow7=0x7f0a0026;
         public static final int tableRow8=0x7f0a0028;
         public static final int tableRow9=0x7f0a002c;
-        public static final int textView1=0x7f0a0042;
-        public static final int textView2=0x7f0a0044;
+        public static final int textView1=0x7f0a0040;
+        public static final int textView2=0x7f0a0042;
         public static final int title=0x7f0a000b;
         public static final int txt_interface_intro=0x7f0a0009;
-        public static final int viewFlipper1=0x7f0a0045;
+        public static final int viewFlipper1=0x7f0a0043;
     }
     public static final class layout {
         public static final int custom_actionbar=0x7f030000;
-        public static final int fader_4=0x7f030001;
-        public static final int fader_xypad=0x7f030002;
-        public static final int interface_intro=0x7f030003;
-        public static final int interface_result=0x7f030004;
-        public static final int questionare=0x7f030005;
-        public static final int settings_view=0x7f030006;
-        public static final int startscreen=0x7f030007;
-        public static final int viewflipper=0x7f030008;
-        public static final int xypad_2=0x7f030009;
+        public static final int custom_radiobutton1=0x7f030001;
+        public static final int custom_radiobutton2=0x7f030002;
+        public static final int fader_4=0x7f030003;
+        public static final int fader_xypad=0x7f030004;
+        public static final int interface_intro=0x7f030005;
+        public static final int interface_result=0x7f030006;
+        public static final int questionare=0x7f030007;
+        public static final int settings_view=0x7f030008;
+        public static final int startscreen=0x7f030009;
+        public static final int viewflipper=0x7f03000a;
+        public static final int xypad_2=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -264,11 +266,13 @@ containing a value of this type.
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -287,6 +291,8 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
+        public static final int MyRadioButtonStyle1=0x7f080002;
+        public static final int MyRadioButtonStyle2=0x7f080003;
     }
     public static final class styleable {
         /** Attributes that can be used with a de_steinberg_usabilitylab_Fader.

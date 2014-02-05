@@ -3,7 +3,7 @@ package de.steinberg.usabilitylab;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
-import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ViewFlipper;
 
 public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {

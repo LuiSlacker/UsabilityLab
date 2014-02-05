@@ -1,5 +1,7 @@
 package de.steinberg.usabilitylab;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -10,17 +12,19 @@ import android.widget.ViewFlipper;
 
 public class Questionare extends AnalyseRating{
 
-	private ViewFlipper flipper;
+	private ViewFlipper rootViewFlipper;
 	private int[] answers;
 	private int check = 0;
 	private Context context;
 	
 	public Questionare(Context context) {
 		super(context);
+		this.context = context;
 		init();
 	}
 	public Questionare(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		this.context = context;
 		init();
 	}
 	public Questionare(Context context, AttributeSet attrs, int defStyle) {
@@ -37,15 +41,16 @@ public class Questionare extends AnalyseRating{
 	}
 	@Override
 	protected void onAttachedToWindow() {
-		flipper = (ViewFlipper) getParent();
+		rootViewFlipper = (ViewFlipper) getParent();
 		Button send = (Button) findViewById(R.id.btn_questionare_send);
 		send.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				if(analyseRating()){
-					flipper.showNext();
-					evaluateExperience();
+					String experience = evaluateExperience();
+					createInterfaces(experience);
+					rootViewFlipper.showNext();
 					resetRadioButtons();
 				} else{
 					showAlert("Please answer all questions!");
@@ -56,21 +61,28 @@ public class Questionare extends AnalyseRating{
 		super.onAttachedToWindow();
 	}
 	
-	private void evaluateExperience(){
-		
+	private String evaluateExperience(){
 		int tmp = Integer.valueOf(rButtons.get(1).toString());
 		check = (tmp == 4)? 0:tmp*5;
 		for(int i=2;i<rButtons.size();i++){
-			Log.d("gggz", String.valueOf(rButtons.get(i)));
 			if (Integer.valueOf(rButtons.get(i).toString()) == answers[i-2]){
 				check += 10;
 			}
 		}
-		if (check>=35) {
-			Toast.makeText(getContext(), String.valueOf(check)+" YOU ARE A DSP EXPERT!!", Toast.LENGTH_SHORT).show();
-		} else {
-			Toast.makeText(getContext(), String.valueOf(check)+" YOU ARE A LOOSER!!", Toast.LENGTH_SHORT).show();
+		return (check>=35) ? "expert" : "novice";
+	}
+	
+	private void createInterfaces(String experience) {
+		int i = 0;
+		ArrayList<Integer> test = new ArrayList<Integer>();
+		int [] interfaceOrder = LatinSquareFactory.getInstance().getInterfaceOrder(experience);
+		for (int dspinterface:interfaceOrder){
+			DSPInterfaceViewFlipper dspInterfaceViewFlipper = new DSPInterfaceViewFlipper(context, dspinterface);
+			rootViewFlipper.addView(dspInterfaceViewFlipper,2+i++);
+			test.add(dspinterface);
 		}
+		Log.d("counterbalanced", experience + " --> Order: " + test);
+		Toast.makeText(context, String.valueOf(experience + ":  Order " + interfaceOrder), Toast.LENGTH_LONG).show();
 		
 	}
 

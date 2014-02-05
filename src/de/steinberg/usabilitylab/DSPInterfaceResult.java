@@ -44,7 +44,7 @@ public class DSPInterfaceResult extends AnalyseRating{
 			
 			@Override
 			public void onClick(View v) {
-				if (analyseRating()){
+				if (true){ //analyseRating()
 					de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) getParent();
 					interfaceViewFlipper.showNext();
 					resetRadioButtons();

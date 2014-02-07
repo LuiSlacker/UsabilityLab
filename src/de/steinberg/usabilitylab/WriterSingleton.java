@@ -1,71 +1,59 @@
 package de.steinberg.usabilitylab;
 
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 
 import android.content.Context;
-import android.os.Environment;
-import android.util.Log;
 import android.widget.Toast;
 
 public class WriterSingleton {
 	
+	private Context context;
+	private static File file = null;
+	private static File Novice = null;
+	private static File Expert = null;
 	private static WriterSingleton instance = null;
 	
-	private WriterSingleton(){}
+	private WriterSingleton(Context context){
+		this.context = context;
+	}
 
-	public static WriterSingleton getInstance(){
+	public static WriterSingleton getInstance(Context context){
+		
 		if(instance ==null){
-			instance = new WriterSingleton();
+			instance = new WriterSingleton(context);
+			File path = context.getExternalFilesDir(null);
+			Novice = new File(path, "Novices.txt");
+			Expert = new File(path, "Experts.txt");
 		}
 		return instance;
 	}
 	
-	public boolean writeToFile(String string, Context context) {
+	public void setExperience(String experience) {
+		if (experience.equals("novice")){
+			file = Novice;
+		} else {
+			file = Expert;
+		}
 		
-		String root = Environment.getExternalStorageDirectory().toString();
-		File dir = new File("/storage/sdcard0");    
-//		dir.mkdirs();
-		    
-		    
-//		File externalStorageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
-//		externalStorageDir.mkdirs();
-		File myFile = new File(dir, "mysdfile.txt");
-
-		if(myFile.exists())
-		{
-		   try
-		   {
-		       FileOutputStream fOut = new FileOutputStream(myFile);
-		       OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
-		       myOutWriter.append(string);
-		       myOutWriter.close();
-		       fOut.close();
-		       Log.d("write", "Done!");
-		    } catch(Exception e)  {
-		    	Toast.makeText(context, "Failed writing to File", Toast.LENGTH_SHORT).show();
-		    	Log.d("write", "ERROR appending File" + e.getMessage());
-		    }
-		}
-		else
-		{
-		    try {
-				myFile.createNewFile();
-			} catch (IOException e) {
-				Log.d("write", "ERROR creating file: " + e.getMessage());
-				Toast.makeText(context, "Failed to create File", Toast.LENGTH_SHORT).show();
-				e.printStackTrace();
-			}
-		}
-		return true;
-		
-	/*	String state = Environment.getExternalStorageState();
-		if (state.equals(Environment.MEDIA_MOUNTED)) {
-			Log.d("write", "READ+WRITE");
-		}
-		return true;*/
 	}
 		
+	public void writeToFile(String metrics) {
+		FileWriter writer = null;
+		try {
+			writer = new FileWriter(file, true);
+			writer.write(metrics);
+		} catch (IOException e) {
+			e.printStackTrace();
+			Toast.makeText(context, "Failed to save metrics... Contact Supervisor!", Toast.LENGTH_SHORT).show();
+		}
+	    finally {
+	        try {
+				writer.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	     }
+	}
 }

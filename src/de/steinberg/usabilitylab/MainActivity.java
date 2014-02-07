@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
 			de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) flipper.getChildAt(inx);
 			interfaceViewFlipper.showNext();
 			
-			WriterSingleton.getInstance().writeToFile(String.valueOf(times),getApplicationContext());
+			WriterSingleton.getInstance(getApplicationContext()).writeToFile(String.valueOf(times));
 			
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
 			comparing_count = 0;

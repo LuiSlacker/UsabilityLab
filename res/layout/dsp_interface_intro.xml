@@ -4,22 +4,13 @@
     android:layout_height="match_parent"
     android:id="@+id/dsp_interface_intro">
 
-    <TextView 
-        android:id="@+id/txt_interface_intro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="286dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" 
-        android:textColor="#FFFFFF"/>
-
     <Button
         android:id="@+id/btn_interface_intro"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_interface_intro"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="86dp"
-        android:text="GO" />
+        android:layout_centerVertical="true"
+        android:text="GO"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

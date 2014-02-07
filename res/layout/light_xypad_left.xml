@@ -15,7 +15,7 @@
         android:layout_width="0dip"
         android:layout_height="match_parent"
         android:layout_weight="3"
-        android:background="@color/list_background"
+        android:background="@color/interface_bg"
         custom:acceleration="false"
         custom:channel="3"
         custom:controllerNumber_x="10"

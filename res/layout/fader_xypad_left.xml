@@ -15,7 +15,7 @@
         android:layout_width="0dip"
         android:layout_height="match_parent"
         android:layout_weight="3"
-        android:background="@color/list_background"
+        android:background="@color/interface_bg"
         custom:acceleration="false"
         custom:channel="3"
         custom:controllerNumber_x="10"
@@ -23,14 +23,31 @@
         custom:controllerNumber_z="12"
         custom:drawbackground="false" />
 
-    <de.steinberg.usabilitylab.Fader
-        android:id="@+id/fader5"
+     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_weight="1"
-        android:background="@color/list_background"
-        custom:channelFader="3"
-        custom:controllerNumber="9" />
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:orientation="vertical" >
+
+        <de.steinberg.usabilitylab.Fader
+            android:id="@+id/fader5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@color/interface_bg"
+            custom:channelFader="3"
+            custom:controllerNumber="9" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/parameter_margin_top"
+            android:text="@string/parameter1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/parameter_textsize" />
+    </LinearLayout>
 
 </LinearLayout>

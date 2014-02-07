@@ -37,17 +37,17 @@ public class FinishScreen extends RelativeLayout{
 					rootViewFlipper.showNext();
 				}
 			});
-		}
 		
-		Button btn_close = (Button) findViewById(R.id.btn_close);
-		btn_close.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Activity activity = (Activity) context;
-				activity.finish();
-			}
-		});
+			Button btn_close = (Button) findViewById(R.id.btn_close);
+			btn_close.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Activity activity = (Activity) context;
+					activity.finish();
+				}
+			});
+		}
 		super.onAttachedToWindow();
 	}
 }

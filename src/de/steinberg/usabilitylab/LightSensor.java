@@ -17,7 +17,7 @@ public class LightSensor extends View implements SensorEventListener{
 
 	private Context context;
 	private Bitmap sun, raw_sun;
-	private float x, y, sun_size, sun_size_init = 1130;
+	private float sun_size, sun_size_init = 1130;
 	
 	private SensorManager sensorManager;
 	private Sensor sensorLight;
@@ -74,7 +74,6 @@ public class LightSensor extends View implements SensorEventListener{
 	public void onSensorChanged(SensorEvent event) {
 		if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
 			sun_size = event.values[0];
-			Log.d("sun_size", String.valueOf(sun_size));
 			sun_size = sun_size/sun_size_init;
 			sun_size = sun_size*550+100;
 			invalidate();

@@ -50,6 +50,7 @@ public class Questionare extends AnalyseRating{
 				if(analyseRating()){
 					String experience = evaluateExperience();
 					createInterfaces(experience);
+					WriterSingleton.getInstance(context).setExperience(experience);
 					rootViewFlipper.showNext();
 					resetRadioButtons();
 				} else{

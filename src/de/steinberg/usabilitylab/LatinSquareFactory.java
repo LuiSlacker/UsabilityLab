@@ -1,5 +1,7 @@
 package de.steinberg.usabilitylab;
 
+import android.content.Context;
+
 public class LatinSquareFactory {
 
 	private static LatinSquareFactory instance = null;
@@ -14,13 +16,30 @@ public class LatinSquareFactory {
 			{3,0,2,1}
 	};
 	
-	private LatinSquareFactory (){}
+	private LatinSquareFactory (Context context){
+		int tmp_novice = DSPInterfaceOrderPreferences.getInstance(context).loadSavedPreferences("Novice3");
+		int tmp_expert = DSPInterfaceOrderPreferences.getInstance(context).loadSavedPreferences("Expert3");
+		if (tmp_novice != -1){
+			this.novice = tmp_novice;
+		}
+		if (tmp_novice != -1){
+			this.expert = tmp_expert;
+		}
+	}
 	
-	public static LatinSquareFactory getInstance() {
+	public static LatinSquareFactory getInstance(Context context) {
 		if (instance == null){
-			instance = new LatinSquareFactory();
+			instance = new LatinSquareFactory(context);
 		}
 		return instance;
+	}
+	
+	public int getNovice() {
+		return novice;
+	}
+	
+	public int getExpert() {
+		return expert;
 	}
 	
 	public int[] getInterfaceOrder(String group) {

@@ -22,8 +22,7 @@ import com.flat20.fingerplay.socket.commands.midi.MidiControlChange;
 import de.steinberg.usabilitylab.network.ConnectionManager;
 
 
-
-public class Pad1 extends View implements SensorEventListener{
+public class XYPad extends View implements SensorEventListener{
 
 	private Context context;
 	private AttributeSet attrs;
@@ -42,20 +41,20 @@ public class Pad1 extends View implements SensorEventListener{
 	private ConnectionManager mConnectionManager = ConnectionManager.getInstance();
 	final private MidiControlChange mControlChange = new MidiControlChange();
 	
-	public Pad1(Context context) {
+	public XYPad(Context context) {
 		super(context);
 		this.context = context;
 		init();
 	}
 	
-	public Pad1(Context context, AttributeSet attrs) {
+	public XYPad(Context context, AttributeSet attrs) {
 		 super(context, attrs);
 		 this.context = context;
 		 this.attrs = attrs;
 		 init();
 	}
 
-	public Pad1(Context context, AttributeSet attrs, int defStyle) {
+	public XYPad(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		this.context = context;
 		init();
@@ -104,6 +103,7 @@ public class Pad1 extends View implements SensorEventListener{
 		}
 		a.recycle();
 		
+		
 //		sm = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
 //		accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		
@@ -143,9 +143,10 @@ public class Pad1 extends View implements SensorEventListener{
 		zndFinger.setColor(Color.WHITE);
 		zndFinger.setStyle(Paint.Style.STROKE);
 		zndFinger.setStrokeWidth(1);
+		zndFinger.setAntiAlias(true);
 		
 		transparent = new Paint();
-		transparent.setARGB(50, 255, 255, 255);
+		transparent.setARGB(255, 183, 12, 35);
 		transparent.setStyle(Paint.Style.FILL);
 	}
 	
@@ -170,9 +171,6 @@ public class Pad1 extends View implements SensorEventListener{
 			canvas.drawRect(0, 0, getWidth(), getHeight(), fill);
 		}
 		
-		// xyPad border
-		canvas.drawRect(0, 0, getWidth(), getHeight(), rect);
-		
 		// Axis
 		canvas.drawLine(50, getHeight()-50, getWidth()-50, getHeight()-50, coordinat);
 		canvas.drawLine(50, 50, 50, getHeight()-50, coordinat);
@@ -192,6 +190,9 @@ public class Pad1 extends View implements SensorEventListener{
 			canvas.drawCircle(x, y, (float) tmp_znd, transparent);
 			canvas.drawCircle(x, y, (float) tmp_znd, zndFinger);
 		}
+		
+		// xyPad border
+		canvas.drawRect(0, 0, getWidth(), getHeight(), rect);
 		
 		midi = Bitmap.createScaledBitmap(raw_midi, (int)180, (int)180, false);
 		canvas.drawBitmap(midi, x-midi.getWidth()/2, y-midi.getHeight()/2, new Paint());

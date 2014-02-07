@@ -2,21 +2,21 @@ package de.steinberg.usabilitylab;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.AttributeSet;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 	
 public class DSPInterfaceIntro extends RelativeLayout{
 	
-	private String DSPInterfaceName;
+	private int DSPInterfaceBG;
 	private Context context;
 
-	public DSPInterfaceIntro(Context context, String name) {
+	public DSPInterfaceIntro(Context context, int background) {
 		super(context);
-		this.DSPInterfaceName = name;
+		this.DSPInterfaceBG = background;
 		this.context = context;
 		init();
 	}
@@ -34,9 +34,11 @@ public class DSPInterfaceIntro extends RelativeLayout{
 
 	@Override
 	protected void onAttachedToWindow() {
-		
-		TextView introText = (TextView) findViewById(R.id.txt_interface_intro);
-		introText.setText(DSPInterfaceName);
+		Resources res = getResources();
+		Drawable t = res.getDrawable(DSPInterfaceBG); 
+		setBackgroundDrawable(t);
+//		TextView introText = (TextView) findViewById(R.id.txt_interface_intro);
+//		introText.setText(DSPInterfaceName);
 		
 		Button intro = (Button) findViewById(R.id.btn_interface_intro);
 		intro.setOnClickListener(new OnClickListener() {

@@ -95,7 +95,7 @@
         </de.steinberg.usabilitylab.DSPInterfaceIntro>
 
         <!-- Fader + XYPAD Interface -->
-        <include layout="@layout/fader_xypad" />
+        <include layout="@layout/fader_xypad_right" />
 
         <!-- Fader + XYPAD Rating -->
         <de.steinberg.usabilitylab.DSPInterfaceResult
@@ -128,7 +128,7 @@
         </de.steinberg.usabilitylab.DSPInterfaceIntro>
 
         <!-- Fader + XYPAD Interface -->
-        <include layout="@layout/fader_xypad" />
+        <include layout="@layout/fader_xypad_right" />
 
         <!-- Fader + XYPAD Rating -->
         <de.steinberg.usabilitylab.DSPInterfaceResult

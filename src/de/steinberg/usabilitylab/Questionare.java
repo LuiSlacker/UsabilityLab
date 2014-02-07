@@ -75,15 +75,13 @@ public class Questionare extends AnalyseRating{
 	private void createInterfaces(String experience) {
 		int i = 0;
 		ArrayList<Integer> test = new ArrayList<Integer>();
-		int [] interfaceOrder = LatinSquareFactory.getInstance().getInterfaceOrder(experience);
+		int [] interfaceOrder = LatinSquareFactory.getInstance(context).getInterfaceOrder(experience);
 		for (int dspinterface:interfaceOrder){
-			DSPInterfaceViewFlipper dspInterfaceViewFlipper = new DSPInterfaceViewFlipper(context, dspinterface);
+			DSPInterfaceViewFlipper dspInterfaceViewFlipper = new DSPInterfaceViewFlipper(context, dspinterface, Integer.valueOf(rButtons.get(0).toString()));
 			rootViewFlipper.addView(dspInterfaceViewFlipper,2+i++);
 			test.add(dspinterface);
 		}
 		Log.d("counterbalanced", experience + " --> Order: " + test);
-		Toast.makeText(context, String.valueOf(experience + ":  Order " + interfaceOrder), Toast.LENGTH_LONG).show();
-		
 	}
 
 }

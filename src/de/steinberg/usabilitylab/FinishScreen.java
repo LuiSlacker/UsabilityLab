@@ -11,7 +11,6 @@ import android.widget.ViewFlipper;
 public class FinishScreen extends RelativeLayout{
 
 	private Context context;
-	private ViewFlipper rootViewFlipper;
 	
 	public FinishScreen(Context context) {
 		super(context);
@@ -26,17 +25,19 @@ public class FinishScreen extends RelativeLayout{
 
 	@Override
 	protected void onAttachedToWindow() {
-		rootViewFlipper = (ViewFlipper) getParent();
 		
 		Button btn_again = (Button) findViewById(R.id.btn_again);
-		btn_again.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				rootViewFlipper.removeViews(2, 4);
-				rootViewFlipper.showNext();
-			}
-		});
+		if (!isInEditMode()) {
+			btn_again.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					ViewFlipper  rootViewFlipper = (ViewFlipper) getParent();
+					rootViewFlipper.removeViews(2, 4);
+					rootViewFlipper.showNext();
+				}
+			});
+		}
 		
 		Button btn_close = (Button) findViewById(R.id.btn_close);
 		btn_close.setOnClickListener(new OnClickListener() {

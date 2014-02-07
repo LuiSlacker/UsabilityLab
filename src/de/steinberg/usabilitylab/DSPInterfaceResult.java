@@ -8,12 +8,12 @@ import android.widget.Button;
 
 public class DSPInterfaceResult extends AnalyseRating{
 
-	private String DSPinterfaceName;
+	private int DSPInterfaceBackground;
 	private Context context;
 	
-	public DSPInterfaceResult(Context context, String name) {
+	public DSPInterfaceResult(Context context, int bg) {
 		super(context);
-		this.DSPinterfaceName = name;
+		this.DSPInterfaceBackground = bg;
 		this.context = context;
 		init();
 	}

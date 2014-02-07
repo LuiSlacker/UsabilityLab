@@ -7,7 +7,7 @@ import android.widget.ViewFlipper;
 public abstract class AbstractDSPInterfaceViewFlipper extends ViewFlipper{
 
 	private Context context;
-	protected String DSPinterfaceName;
+	protected int DSPInterfaceBackground;
 	
 	public AbstractDSPInterfaceViewFlipper(Context context) {
 		super(context);
@@ -21,14 +21,14 @@ public abstract class AbstractDSPInterfaceViewFlipper extends ViewFlipper{
 	}
 	
 	private void addDSPInterfaceIntro(){
-		DSPInterfaceIntro interfaceIntro = new DSPInterfaceIntro(context, DSPinterfaceName);
+		DSPInterfaceIntro interfaceIntro = new DSPInterfaceIntro(context, DSPInterfaceBackground);
 		addView(interfaceIntro);
 	}
 	
 	protected abstract void addDSPInterface();
 	
 	private void addDSPInterfaceResult(){
-		DSPInterfaceResult interfaceResult = new DSPInterfaceResult(context, DSPinterfaceName);
+		DSPInterfaceResult interfaceResult = new DSPInterfaceResult(context, DSPInterfaceBackground);
 		addView(interfaceResult);
 	}
 

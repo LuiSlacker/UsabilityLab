@@ -33,7 +33,7 @@ import de.steinberg.usabilitylab.settings.SettingsModel;
 import de.steinberg.usabilitylab.settings.SettingsView;
 
 
-public class MainActivity extends Activity implements OnClickListener{
+public class MainActivity extends Activity {
 
 	private ViewFlipper flipper;
 	
@@ -61,6 +61,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		// insert custom View in ActionBar
 		actionBar = getActionBar();
 		actionBar.setCustomView(R.layout.custom_actionbar);
+		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
 		
 		// load Server preferences
 		mSettingsModel = SettingsModel.getInstance();
@@ -101,45 +102,10 @@ public class MainActivity extends Activity implements OnClickListener{
        
        // connect onClickListeners 
        Button btn_done = (Button) actionBar.getCustomView().findViewById(R.id.btn_done);
-       btn_done.setOnClickListener(this);
-        
-       Button btn_start = (Button) findViewById(R.id.btn_start);
-       btn_start.setOnClickListener(this);
-	}
-        
-	@Override
-	protected void onResume() {
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
-		super.onResume();
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.action_settings:
-			Intent settingsIntent = new Intent(getApplicationContext(), SettingsView.class);
-	        settingsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);    
-		    startActivity(settingsIntent);
-            return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
-	
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.btn_start:
-			flipper.showNext();
-			break;
-		case R.id.btn_done:
+       btn_done.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
 			times.add(TimeSingleton.getInstance().end()/1000);
 			comparing.add(comparing_count);
 			
@@ -154,10 +120,27 @@ public class MainActivity extends Activity implements OnClickListener{
 			comparing_count = 0;
 			Log.d("list", String.valueOf(comparing));
 			Log.d("list", String.valueOf(times));
-			break;
-		default:
-			break;
 		}
+	});
+        
+    
+}
+	
+	@Override
+	protected void onPause() {
+		
+		int novice = LatinSquareFactory.getInstance(getApplicationContext()).getNovice();
+		DSPInterfaceOrderPreferences.getInstance(getApplicationContext()).saveSharedPreferences("Novice3", novice);
+		
+		int expert = LatinSquareFactory.getInstance(getApplicationContext()).getExpert();
+		DSPInterfaceOrderPreferences.getInstance(getApplicationContext()).saveSharedPreferences("Expert3", expert);
+		super.onPause();
+	}
+	
+	@Override
+	protected void onResume() {
+		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
+		super.onResume();
 	}
 
 }

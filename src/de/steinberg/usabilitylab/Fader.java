@@ -79,7 +79,7 @@ public class Fader extends View{
 		
 		
 		rect_filled = new Paint();
-		rect_filled.setColor(Color.RED);
+		rect_filled.setColor(getResources().getColor(R.color.fader));
 		
 //		text = new Paint();
 //		text.setColor(Color.WHITE);

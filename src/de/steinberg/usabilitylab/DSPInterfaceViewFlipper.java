@@ -12,11 +12,13 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 	private Context context;
 	private int DSPInterfaceID;
 	private int DSPInterface;
+	private int preferencedHand;
 	
-	public DSPInterfaceViewFlipper(Context context, int DSPInterface) {
+	public DSPInterfaceViewFlipper(Context context, int DSPInterface, int preferencedHand) {
 		super(context);
 		this.context = context;
 		this.DSPInterface = DSPInterface;
+		this.preferencedHand = preferencedHand;
 		init();
 	}
 	
@@ -43,9 +45,9 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 		if (this.getDisplayedChild() == this.getChildCount()-1){
 			ViewFlipper flipper = (ViewFlipper) getParent();
 			flipper.showNext();
-		} //else {
+		} else {
 			super.showNext();	
-//		}
+		}
 	}
 	@Override
 	protected void addDSPInterface() {
@@ -56,20 +58,20 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 	private void mapDSPInterfaces(){
 		switch (DSPInterface) {
 		case 0:
-			DSPinterfaceName = "4 Fader";
+			DSPInterfaceBackground = R.drawable.fourfader;
 			DSPInterfaceID = R.layout.fader_4; 
 			break;
 		case 1:
-			DSPinterfaceName = "2 XYPads";
+			DSPInterfaceBackground = R.drawable.two_xypads;
 			DSPInterfaceID = R.layout.xypad_2; 
 			break;
 		case 2:
-			DSPinterfaceName = "Fader + XYPads";
-			DSPInterfaceID = R.layout.fader_xypad; 	
+			DSPInterfaceBackground = R.drawable.fader_xypad;
+			DSPInterfaceID = (preferencedHand == 1) ? R.layout.light_xypad_left : R.layout.fader_xypad_right; 	
 			break;
 		case 3:
-			DSPinterfaceName = "Light + XYPads";
-			DSPInterfaceID = R.layout.fader_xypad; 
+			DSPInterfaceBackground = R.drawable.light_xypad;
+			DSPInterfaceID = (preferencedHand == 1) ? R.layout.light_xypad_left : R.layout.light_xypad_right; 
 			break;
 		default:
 			break;

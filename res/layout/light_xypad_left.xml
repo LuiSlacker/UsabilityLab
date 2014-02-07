@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <de.steinberg.usabilitylab.XYPad
+    <de.steinberg.usabilitylab.dspinterfaces.XYPad
         android:id="@+id/pad3"
         android:layout_width="0dip"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
         custom:controllerNumber_z="12"
         custom:drawbackground="false" />
 
-    <de.steinberg.usabilitylab.LightSensor
+    <de.steinberg.usabilitylab.dspinterfaces.LightSensor
         android:id="@+id/fader5"
         android:layout_width="0dp"
         android:layout_height="match_parent"

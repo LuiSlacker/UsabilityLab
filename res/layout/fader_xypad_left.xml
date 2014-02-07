@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <de.steinberg.usabilitylab.XYPad
+    <de.steinberg.usabilitylab.dspinterfaces.XYPad
         android:id="@+id/pad3"
         android:layout_width="0dip"
         android:layout_height="match_parent"
@@ -30,7 +30,7 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:orientation="vertical" >
 
-        <de.steinberg.usabilitylab.Fader
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
             android:id="@+id/fader5"
             android:layout_width="match_parent"
             android:layout_height="0dp"

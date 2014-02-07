@@ -16,7 +16,7 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <de.steinberg.usabilitylab.Fader
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
             android:id="@+id/fader6"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -36,7 +36,7 @@
             android:textSize="@dimen/parameter_textsize" />
     </LinearLayout>
 
-    <de.steinberg.usabilitylab.XYPad
+    <de.steinberg.usabilitylab.dspinterfaces.XYPad
         android:id="@+id/pad3"
         android:layout_width="0dip"
         android:layout_height="match_parent"

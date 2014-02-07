@@ -16,7 +16,7 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <de.steinberg.usabilitylab.Fader
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
             android:id="@+id/fader1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -43,7 +43,7 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:orientation="vertical" >
 
-        <de.steinberg.usabilitylab.Fader
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
             android:id="@+id/fader2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -70,7 +70,7 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:orientation="vertical" >
 
-        <de.steinberg.usabilitylab.Fader
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
             android:id="@+id/fader3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -97,7 +97,7 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:orientation="vertical" >
 
-        <de.steinberg.usabilitylab.Fader
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
             android:id="@+id/fader4"
             android:layout_width="match_parent"
             android:layout_height="0dp"

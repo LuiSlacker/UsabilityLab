@@ -31,6 +31,10 @@ import com.flat20.fingerplay.socket.commands.midi.MidiNoteOn;
 import de.steinberg.usabilitylab.network.ConnectionManager;
 import de.steinberg.usabilitylab.settings.SettingsModel;
 import de.steinberg.usabilitylab.settings.SettingsView;
+import de.steinberg.usabilitylab.singletons.DSPInterfaceOrderPreferences;
+import de.steinberg.usabilitylab.singletons.LatinSquareFactory;
+import de.steinberg.usabilitylab.singletons.Timer;
+import de.steinberg.usabilitylab.singletons.Writer;
 
 
 public class MainActivity extends Activity {
@@ -106,7 +110,7 @@ public class MainActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
-			times.add(TimeSingleton.getInstance().end()/1000);
+			times.add(Timer.getInstance().end()/1000);
 			comparing.add(comparing_count);
 			
 			// get active InterfaceViewFlipper and display next View
@@ -114,7 +118,7 @@ public class MainActivity extends Activity {
 			de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) flipper.getChildAt(inx);
 			interfaceViewFlipper.showNext();
 			
-			WriterSingleton.getInstance(getApplicationContext()).writeToFile(String.valueOf(times));
+			Writer.getInstance(getApplicationContext()).writeToFile(String.valueOf(times));
 			
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
 			comparing_count = 0;

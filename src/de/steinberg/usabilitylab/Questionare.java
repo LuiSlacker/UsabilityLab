@@ -2,6 +2,9 @@ package de.steinberg.usabilitylab;
 
 import java.util.ArrayList;
 
+import de.steinberg.usabilitylab.singletons.LatinSquareFactory;
+import de.steinberg.usabilitylab.singletons.Writer;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -50,7 +53,7 @@ public class Questionare extends AnalyseRating{
 				if(analyseRating()){
 					String experience = evaluateExperience();
 					createInterfaces(experience);
-					WriterSingleton.getInstance(context).setExperience(experience);
+					Writer.getInstance(context).setExperience(experience);
 					rootViewFlipper.showNext();
 					resetRadioButtons();
 				} else{

@@ -1,5 +1,6 @@
 package de.steinberg.usabilitylab;
 
+import de.steinberg.usabilitylab.singletons.Timer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -48,7 +49,7 @@ public class DSPInterfaceIntro extends RelativeLayout{
 				de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) getParent();
 				interfaceViewFlipper.showNext();
 				interfaceViewFlipper.showCutomActionBar(true);
-				TimeSingleton.getInstance().start();
+				Timer.getInstance().start();
 			}
 		});
 		super.onAttachedToWindow();

@@ -32,6 +32,8 @@
         android:layout_weight="1"
         custom:channelFader="3"
         custom:controllerNumber="9"
-        android:tag="1" />
+        android:tag="1"
+        custom:channelLight="3"
+        custom:controllerNumber_Light="13"/>
 
 </LinearLayout>

@@ -16,15 +16,12 @@ import de.steinberg.usabilitylab.network.ConnectionManager;
 
 public class Fader extends AbstractDSPInterface{
 
-	private int channel, controllerNumber, value_y = 0, lastValue = 0;
+	private int channel, controllerNumber, value_y = 0;
 	private Context context;
 	private AttributeSet attrs;
 	private Canvas canvas;
 	private Paint rect_blank, rect_filled;
 	private float y = 600, tmp_y = 0;
-	
-	private ConnectionManager mConnectionManager = ConnectionManager.getInstance();
-	final private MidiControlChange mControlChange = new MidiControlChange();
 	
 	public Fader(Context context) {
 		super(context);
@@ -78,14 +75,6 @@ public class Fader extends AbstractDSPInterface{
 		rect_filled.setColor(getResources().getColor(R.color.fader));
 		
 		invalidate();
-	}
-	
-	private void sendControlChange(int value, int channel, int controllerNumber){
-		if (value != lastValue) {
-			mControlChange.set(0xB0, channel, controllerNumber, value);
-			mConnectionManager.send( mControlChange );		
-			lastValue = value;
-		}
 	}
 	
 	@Override

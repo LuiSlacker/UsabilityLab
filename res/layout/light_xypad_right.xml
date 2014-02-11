@@ -18,7 +18,9 @@
         android:layout_weight="1"
         custom:channelFader="3"
         custom:controllerNumber="9" 
-        android:tag="0"/>
+        android:tag="0"
+        custom:channelLight="3"
+        custom:controllerNumber_Light="13"/>
 
     <de.steinberg.usabilitylab.dspinterfaces.XYPad
         android:id="@+id/pad3"

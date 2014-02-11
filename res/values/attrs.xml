@@ -15,7 +15,9 @@
     	<attr name="controllerNumber" format="integer" />
 	</declare-styleable>
 	
-	<declare-styleable name="de.steinberg.usabilitylab.InterfaceResult">
-	    <attr name="interfaceName" format="string"/>
+	<declare-styleable name="de.steinberg.usabilitylab.dspinterfaces.LightSensor">
+	    <attr name="channelLight" format="integer"/>
+	    <attr name="controllerNumber_Light" format="integer"/>
+	    
 	</declare-styleable>
 </resources>

@@ -44,7 +44,23 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
+        public static final int channelLight=0x7f010009;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int controllerNumber=0x7f010008;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int controllerNumber_Light=0x7f01000a;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -85,14 +101,6 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int drawbackground=0x7f010006;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int interfaceName=0x7f010009;
     }
     public static final class color {
         public static final int black=0x7f050009;
@@ -145,106 +153,104 @@ containing a value of this type.
         public static final int wooden=0x7f020013;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0050;
-        public static final int btn_again=0x7f0a0047;
-        public static final int btn_close=0x7f0a0048;
-        public static final int btn_compare=0x7f0a0003;
-        public static final int btn_done=0x7f0a0004;
-        public static final int btn_interface_intro=0x7f0a0006;
-        public static final int btn_interface_result=0x7f0a0038;
-        public static final int btn_questionare_send=0x7f0a004b;
-        public static final int btn_settings=0x7f0a004d;
-        public static final int btn_start=0x7f0a004c;
-        public static final int container=0x7f0a0002;
-        public static final int divider=0x7f0a0009;
-        public static final int dsp_interface_intro=0x7f0a0005;
-        public static final int fader1=0x7f0a0039;
-        public static final int fader2=0x7f0a003b;
-        public static final int fader3=0x7f0a003d;
-        public static final int fader4=0x7f0a003f;
-        public static final int fader5=0x7f0a0042;
-        public static final int fader6=0x7f0a0043;
-        public static final int imageView3=0x7f0a0049;
-        public static final int interfaceViewFlipper=0x7f0a0001;
-        public static final int pad1=0x7f0a004e;
-        public static final int pad2=0x7f0a004f;
-        public static final int pad3=0x7f0a0041;
-        public static final int question1=0x7f0a000c;
-        public static final int question10=0x7f0a0029;
-        public static final int question11=0x7f0a0034;
-        public static final int question12=0x7f0a0036;
-        public static final int question1_left=0x7f0a000e;
-        public static final int question1_right=0x7f0a0015;
-        public static final int question2=0x7f0a0017;
-        public static final int question2_left=0x7f0a0019;
-        public static final int question2_right=0x7f0a001b;
-        public static final int question3=0x7f0a001d;
-        public static final int question3_left=0x7f0a001f;
-        public static final int question3_right=0x7f0a0021;
-        public static final int question4=0x7f0a0023;
-        public static final int question4_left=0x7f0a0025;
-        public static final int question4_right=0x7f0a0027;
-        public static final int question5=0x7f0a004a;
-        public static final int question6=0x7f0a002b;
-        public static final int question7=0x7f0a002d;
-        public static final int question8=0x7f0a002f;
-        public static final int question9=0x7f0a0031;
-        public static final int radio0=0x7f0a0010;
-        public static final int radio1=0x7f0a0011;
-        public static final int radio2=0x7f0a0012;
-        public static final int radio3=0x7f0a0013;
-        public static final int radio4=0x7f0a0014;
-        public static final int radioGroup1=0x7f0a000f;
-        public static final int radioGroup10=0x7f0a0033;
-        public static final int radioGroup11=0x7f0a0035;
-        public static final int radioGroup12=0x7f0a0037;
-        public static final int radioGroup2=0x7f0a001a;
-        public static final int radioGroup3=0x7f0a0020;
-        public static final int radioGroup4=0x7f0a0026;
-        public static final int radioGroup5=0x7f0a002a;
-        public static final int radioGroup6=0x7f0a002c;
-        public static final int radioGroup7=0x7f0a002e;
-        public static final int radioGroup8=0x7f0a0030;
-        public static final int radioGroup9=0x7f0a0032;
-        public static final int subtitle=0x7f0a0008;
-        public static final int tableLayout1=0x7f0a000a;
-        public static final int tableRow1=0x7f0a000b;
-        public static final int tableRow2=0x7f0a000d;
-        public static final int tableRow3=0x7f0a0016;
-        public static final int tableRow4=0x7f0a0018;
-        public static final int tableRow5=0x7f0a001c;
-        public static final int tableRow6=0x7f0a001e;
-        public static final int tableRow7=0x7f0a0022;
-        public static final int tableRow8=0x7f0a0024;
-        public static final int tableRow9=0x7f0a0028;
-        public static final int textView1=0x7f0a003a;
-        public static final int textView2=0x7f0a003c;
-        public static final int textView3=0x7f0a003e;
-        public static final int textView4=0x7f0a0040;
-        public static final int textview1=0x7f0a0044;
-        public static final int textview2=0x7f0a0045;
-        public static final int textview3=0x7f0a0046;
-        public static final int title=0x7f0a0007;
-        public static final int viewFlipper1=0x7f0a0000;
+        public static final int action_settings=0x7f0a004f;
+        public static final int btn_again=0x7f0a0045;
+        public static final int btn_close=0x7f0a0046;
+        public static final int btn_compare=0x7f0a0001;
+        public static final int btn_done=0x7f0a0002;
+        public static final int btn_interface_intro=0x7f0a0004;
+        public static final int btn_interface_result=0x7f0a0036;
+        public static final int btn_questionare_send=0x7f0a0049;
+        public static final int btn_settings=0x7f0a004b;
+        public static final int btn_start=0x7f0a004a;
+        public static final int container=0x7f0a0000;
+        public static final int divider=0x7f0a0007;
+        public static final int dsp_interface_intro=0x7f0a0003;
+        public static final int fader1=0x7f0a0037;
+        public static final int fader2=0x7f0a0039;
+        public static final int fader3=0x7f0a003b;
+        public static final int fader4=0x7f0a003d;
+        public static final int fader5=0x7f0a0040;
+        public static final int fader6=0x7f0a0041;
+        public static final int imageView3=0x7f0a0047;
+        public static final int pad1=0x7f0a004d;
+        public static final int pad2=0x7f0a004e;
+        public static final int pad3=0x7f0a003f;
+        public static final int question1=0x7f0a000a;
+        public static final int question10=0x7f0a0027;
+        public static final int question11=0x7f0a0032;
+        public static final int question12=0x7f0a0034;
+        public static final int question1_left=0x7f0a000c;
+        public static final int question1_right=0x7f0a0013;
+        public static final int question2=0x7f0a0015;
+        public static final int question2_left=0x7f0a0017;
+        public static final int question2_right=0x7f0a0019;
+        public static final int question3=0x7f0a001b;
+        public static final int question3_left=0x7f0a001d;
+        public static final int question3_right=0x7f0a001f;
+        public static final int question4=0x7f0a0021;
+        public static final int question4_left=0x7f0a0023;
+        public static final int question4_right=0x7f0a0025;
+        public static final int question5=0x7f0a0048;
+        public static final int question6=0x7f0a0029;
+        public static final int question7=0x7f0a002b;
+        public static final int question8=0x7f0a002d;
+        public static final int question9=0x7f0a002f;
+        public static final int radio0=0x7f0a000e;
+        public static final int radio1=0x7f0a000f;
+        public static final int radio2=0x7f0a0010;
+        public static final int radio3=0x7f0a0011;
+        public static final int radio4=0x7f0a0012;
+        public static final int radioGroup1=0x7f0a000d;
+        public static final int radioGroup10=0x7f0a0031;
+        public static final int radioGroup11=0x7f0a0033;
+        public static final int radioGroup12=0x7f0a0035;
+        public static final int radioGroup2=0x7f0a0018;
+        public static final int radioGroup3=0x7f0a001e;
+        public static final int radioGroup4=0x7f0a0024;
+        public static final int radioGroup5=0x7f0a0028;
+        public static final int radioGroup6=0x7f0a002a;
+        public static final int radioGroup7=0x7f0a002c;
+        public static final int radioGroup8=0x7f0a002e;
+        public static final int radioGroup9=0x7f0a0030;
+        public static final int subtitle=0x7f0a0006;
+        public static final int tableLayout1=0x7f0a0008;
+        public static final int tableRow1=0x7f0a0009;
+        public static final int tableRow2=0x7f0a000b;
+        public static final int tableRow3=0x7f0a0014;
+        public static final int tableRow4=0x7f0a0016;
+        public static final int tableRow5=0x7f0a001a;
+        public static final int tableRow6=0x7f0a001c;
+        public static final int tableRow7=0x7f0a0020;
+        public static final int tableRow8=0x7f0a0022;
+        public static final int tableRow9=0x7f0a0026;
+        public static final int textView1=0x7f0a0038;
+        public static final int textView2=0x7f0a003a;
+        public static final int textView3=0x7f0a003c;
+        public static final int textView4=0x7f0a003e;
+        public static final int textview1=0x7f0a0042;
+        public static final int textview2=0x7f0a0043;
+        public static final int textview3=0x7f0a0044;
+        public static final int title=0x7f0a0005;
+        public static final int viewFlipper1=0x7f0a004c;
     }
     public static final class layout {
-        public static final int copyofviewflipper=0x7f030000;
-        public static final int custom_actionbar=0x7f030001;
-        public static final int custom_radiobutton1=0x7f030002;
-        public static final int custom_radiobutton2=0x7f030003;
-        public static final int dsp_interface_intro=0x7f030004;
-        public static final int dsp_interface_result=0x7f030005;
-        public static final int fader_4=0x7f030006;
-        public static final int fader_xypad_left=0x7f030007;
-        public static final int fader_xypad_right=0x7f030008;
-        public static final int finish_screen=0x7f030009;
-        public static final int light_xypad_left=0x7f03000a;
-        public static final int light_xypad_right=0x7f03000b;
-        public static final int questionare=0x7f03000c;
-        public static final int settings_view=0x7f03000d;
-        public static final int startscreen=0x7f03000e;
-        public static final int viewflipper=0x7f03000f;
-        public static final int xypad_2=0x7f030010;
+        public static final int custom_actionbar=0x7f030000;
+        public static final int custom_radiobutton1=0x7f030001;
+        public static final int custom_radiobutton2=0x7f030002;
+        public static final int dsp_interface_intro=0x7f030003;
+        public static final int dsp_interface_result=0x7f030004;
+        public static final int fader_4=0x7f030005;
+        public static final int fader_xypad_left=0x7f030006;
+        public static final int fader_xypad_right=0x7f030007;
+        public static final int finish_screen=0x7f030008;
+        public static final int light_xypad_left=0x7f030009;
+        public static final int light_xypad_right=0x7f03000a;
+        public static final int questionare=0x7f03000b;
+        public static final int settings_view=0x7f03000c;
+        public static final int startscreen=0x7f03000d;
+        public static final int viewflipper=0x7f03000e;
+        public static final int xypad_2=0x7f03000f;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -371,33 +377,6 @@ containing a value of this type.
           @attr name de.steinberg.usabilitylab:controllerNumber
         */
         public static final int de_steinberg_usabilitylab_Fader_controllerNumber = 1;
-        /** Attributes that can be used with a de_steinberg_usabilitylab_InterfaceResult.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #de_steinberg_usabilitylab_InterfaceResult_interfaceName de.steinberg.usabilitylab:interfaceName}</code></td><td></td></tr>
-           </table>
-           @see #de_steinberg_usabilitylab_InterfaceResult_interfaceName
-         */
-        public static final int[] de_steinberg_usabilitylab_InterfaceResult = {
-            0x7f010009
-        };
-        /**
-          <p>This symbol is the offset where the {@link de.steinberg.usabilitylab.R.attr#interfaceName}
-          attribute's value can be found in the {@link #de_steinberg_usabilitylab_InterfaceResult} array.
-
-
-          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name de.steinberg.usabilitylab:interfaceName
-        */
-        public static final int de_steinberg_usabilitylab_InterfaceResult_interfaceName = 0;
         /** Attributes that can be used with a de_steinberg_usabilitylab_Pad1.
            <p>Includes the following attributes:</p>
            <table>
@@ -522,5 +501,48 @@ containing a value of this type.
           @attr name de.steinberg.usabilitylab:drawbackground
         */
         public static final int de_steinberg_usabilitylab_Pad1_drawbackground = 6;
+        /** Attributes that can be used with a de_steinberg_usabilitylab_dspinterfaces_LightSensor.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #de_steinberg_usabilitylab_dspinterfaces_LightSensor_channelLight de.steinberg.usabilitylab:channelLight}</code></td><td></td></tr>
+           <tr><td><code>{@link #de_steinberg_usabilitylab_dspinterfaces_LightSensor_controllerNumber_Light de.steinberg.usabilitylab:controllerNumber_Light}</code></td><td></td></tr>
+           </table>
+           @see #de_steinberg_usabilitylab_dspinterfaces_LightSensor_channelLight
+           @see #de_steinberg_usabilitylab_dspinterfaces_LightSensor_controllerNumber_Light
+         */
+        public static final int[] de_steinberg_usabilitylab_dspinterfaces_LightSensor = {
+            0x7f010009, 0x7f01000a
+        };
+        /**
+          <p>This symbol is the offset where the {@link de.steinberg.usabilitylab.R.attr#channelLight}
+          attribute's value can be found in the {@link #de_steinberg_usabilitylab_dspinterfaces_LightSensor} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name de.steinberg.usabilitylab:channelLight
+        */
+        public static final int de_steinberg_usabilitylab_dspinterfaces_LightSensor_channelLight = 0;
+        /**
+          <p>This symbol is the offset where the {@link de.steinberg.usabilitylab.R.attr#controllerNumber_Light}
+          attribute's value can be found in the {@link #de_steinberg_usabilitylab_dspinterfaces_LightSensor} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name de.steinberg.usabilitylab:controllerNumber_Light
+        */
+        public static final int de_steinberg_usabilitylab_dspinterfaces_LightSensor_controllerNumber_Light = 1;
     };
 }

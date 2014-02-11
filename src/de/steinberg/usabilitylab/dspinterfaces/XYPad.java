@@ -32,7 +32,7 @@ public class XYPad extends AbstractDSPInterface{
 	private Bitmap raw_midi, midi;
 	private Paint rect, coordinat, text, fill, zndFinger, transparent;
 	Canvas mcanvas;
-	private int color, lastValue, channelNumber, controllerNumber_x = -1, controllerNumber_y = -1, 
+	private int channelNumber, controllerNumber_x = -1, controllerNumber_y = -1, 
 				controllerNumber_z = -1, controllerNumber_accel = -1, value_accel, value_x, value_y, value_z;
 	double distance;
 	float x=-100,y=-100;
@@ -41,9 +41,6 @@ public class XYPad extends AbstractDSPInterface{
 	
 	private SensorManager sm;
 	private Sensor accelerometer;
-	
-	private ConnectionManager mConnectionManager = ConnectionManager.getInstance();
-	final private MidiControlChange mControlChange = new MidiControlChange();
 	
 	public XYPad(Context context) {
 		super(context);
@@ -146,16 +143,6 @@ public class XYPad extends AbstractDSPInterface{
 		transparent.setStyle(Paint.Style.FILL);
 	}
 	
-	private void sendControlChange(int value, int channel, int controllerNumber){
-		long time = System.currentTimeMillis(); 
-		if (value != lastValue && time-time_old>14) {
-			mControlChange.set(0xB0, channel, controllerNumber, value);
-			mConnectionManager.send( mControlChange );		
-			lastValue = value;
-			time_old = time;
-		}
-	}
-
 	@Override
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
@@ -166,20 +153,6 @@ public class XYPad extends AbstractDSPInterface{
 			// xyPad background
 			canvas.drawRect(0, 0, getWidth(), getHeight(), fill);
 		}
-		
-//		// Axis
-//		canvas.drawLine(50, getHeight()-50, getWidth()-50, getHeight()-50, coordinat);
-//		canvas.drawLine(50, 50, 50, getHeight()-50, coordinat);
-//		
-//		// Top Arrow
-//		canvas.drawLine(50, 50, 30, 70, coordinat);
-//		canvas.drawLine(50, 50, 70, 70, coordinat);
-//		
-//		// Right Arrow
-//		canvas.drawLine(getWidth()-50, getHeight()-50, getWidth()-70, getHeight()-70, coordinat);
-//		canvas.drawLine(getWidth()-50, getHeight()-50, getWidth()-70, getHeight()-30, coordinat);
-//		
-//		canvas.drawText("String", getWidth()-200, getHeight()-20, text);
 		
 		if (controllerNumber_z != -1) {
 			float tmp_znd = Math.max(150, Math.min((float)distance, 500));
@@ -192,8 +165,6 @@ public class XYPad extends AbstractDSPInterface{
 		
 		midi = Bitmap.createScaledBitmap(raw_midi, (int)180, (int)180, false);
 		canvas.drawBitmap(midi, x-midi.getWidth()/2, y-midi.getHeight()/2, new Paint());
-		
-		Log.d("so", getWidth() + ": " + getHeight());
 	}
 	
 	@Override

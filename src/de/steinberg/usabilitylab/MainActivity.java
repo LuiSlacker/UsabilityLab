@@ -111,7 +111,7 @@ public class MainActivity extends Activity {
 			
 			// put Metrics into Writer_HashMap
 			mArrayList metrics = new mArrayList();
-			metrics.add(Timer.getInstance().end()/1000); 	// Time 
+			metrics.add(Timer.getInstance().end()/60000); 	// Time 
 			metrics.add((double)comparing_count);			// Comparing_Count V
 			for (int i=0; i< parameters.size(); i++){		// Parameters
 				metrics.add(parameters.get(i));

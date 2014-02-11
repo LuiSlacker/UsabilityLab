@@ -4,25 +4,15 @@ import java.util.ArrayList;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.flat20.fingerplay.socket.commands.midi.MidiNoteOff;
@@ -30,7 +20,6 @@ import com.flat20.fingerplay.socket.commands.midi.MidiNoteOn;
 
 import de.steinberg.usabilitylab.network.ConnectionManager;
 import de.steinberg.usabilitylab.settings.SettingsModel;
-import de.steinberg.usabilitylab.settings.SettingsView;
 import de.steinberg.usabilitylab.singletons.DSPInterfaceOrderPreferences;
 import de.steinberg.usabilitylab.singletons.LatinSquareFactory;
 import de.steinberg.usabilitylab.singletons.Timer;
@@ -48,8 +37,7 @@ public class MainActivity extends Activity {
 	final private MidiNoteOff mNoteOff = new MidiNoteOff();
 	
 	private int comparing_count = 0;
-	private ArrayList<Integer> comparing = new ArrayList<Integer>();
-	private  ArrayList<Double> times = new ArrayList<Double>();
+	private double time;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,20 +98,35 @@ public class MainActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
-			times.add(Timer.getInstance().end()/1000);
-			comparing.add(comparing_count);
 			
-			// get active InterfaceViewFlipper and display next View
+			// get active InterfaceViewFlipper
 			int inx = flipper.getDisplayedChild();
-			de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) flipper.getChildAt(inx);
-			interfaceViewFlipper.showNext();
+			DSPInterfaceViewFlipper interfaceViewFlipper = (DSPInterfaceViewFlipper) flipper.getChildAt(inx);
 			
-			Writer.getInstance(getApplicationContext()).writeToFile(String.valueOf(times));
+			// get displayed DSPInterface
+			int d = interfaceViewFlipper.getDisplayedChild();
+			DSPInterface dspinterface = (DSPInterface) interfaceViewFlipper.getChildAt(d);
+			int DSPInterfaceID = dspinterface.getDSPInterfaceID();
+			ArrayList<Double> parameters = dspinterface.retrieveValues();
+			
+			// put Metrics into Writer_HashMap
+			mArrayList metrics = new mArrayList();
+			metrics.add(Timer.getInstance().end()/1000); 	// Time 
+			metrics.add((double)comparing_count);			// Comparing_Count V
+			for (int i=0; i< parameters.size(); i++){		// Parameters
+				metrics.add(parameters.get(i));
+			}
+			
+			Writer.getInstance(getApplicationContext()).fillHashMap(DSPInterfaceID,metrics);
+			
+			interfaceViewFlipper.showNext();				// display next View
+			
+//			Writer.getInstance(getApplicationContext()).writeToFile(String.valueOf(times));
 			
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
 			comparing_count = 0;
-			Log.d("list", String.valueOf(comparing));
-			Log.d("list", String.valueOf(times));
+			Log.d("list", String.valueOf(comparing_count));
+			Log.d("list", String.valueOf(time));
 		}
 	});
         

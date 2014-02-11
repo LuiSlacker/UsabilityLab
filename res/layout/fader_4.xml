@@ -8,7 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin"  >
 
     <LinearLayout
         android:layout_width="0dp"
@@ -23,7 +23,8 @@
             android:layout_weight="10"
             android:background="@color/interface_bg"
             custom:channelFader="3"
-            custom:controllerNumber="9" />
+            custom:controllerNumber="9" 
+            android:tag="0"/>
 
         <TextView
             android:id="@+id/textView1"
@@ -50,7 +51,8 @@
             android:layout_weight="10"
             android:background="@color/interface_bg"
             custom:channelFader="3"
-            custom:controllerNumber="10" />
+            custom:controllerNumber="10" 
+            android:tag="1"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -77,7 +79,8 @@
             android:layout_weight="10"
             android:background="@color/interface_bg"
             custom:channelFader="3"
-            custom:controllerNumber="11" />
+            custom:controllerNumber="11" 
+            android:tag="2"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -104,7 +107,8 @@
             android:layout_weight="10"
             android:background="@color/interface_bg"
             custom:channelFader="3"
-            custom:controllerNumber="12" />
+            custom:controllerNumber="12" 
+            android:tag="3"/>
 
         <TextView
             android:id="@+id/textView4"

@@ -10,7 +10,6 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 
 	private ActionBar actionBar;
 	private Context context;
-	private int DSPInterfaceID;
 	private int DSPInterface;
 	private int preferencedHand;
 	

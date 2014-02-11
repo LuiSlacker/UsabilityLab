@@ -25,14 +25,15 @@ import de.steinberg.usabilitylab.R.styleable;
 import de.steinberg.usabilitylab.network.ConnectionManager;
 
 
-public class XYPad extends View implements SensorEventListener{
+public class XYPad extends AbstractDSPInterface{
 
 	private Context context;
 	private AttributeSet attrs;
 	private Bitmap raw_midi, midi;
 	private Paint rect, coordinat, text, fill, zndFinger, transparent;
 	Canvas mcanvas;
-	private int color, lastValue, channelNumber, controllerNumber_x = -1, controllerNumber_y = -1, controllerNumber_z = -1, controllerNumber_accel = -1, value_accel;
+	private int color, lastValue, channelNumber, controllerNumber_x = -1, controllerNumber_y = -1, 
+				controllerNumber_z = -1, controllerNumber_accel = -1, value_accel, value_x, value_y, value_z;
 	double distance;
 	float x=-100,y=-100;
 	long time_old = 0; 
@@ -106,14 +107,6 @@ public class XYPad extends View implements SensorEventListener{
 		}
 		a.recycle();
 		
-		
-//		sm = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-//		accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-		
-		sm = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-		accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-		sm.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-		
 		initializePaints();
 		
 		raw_midi = BitmapFactory.decodeResource(getResources(), R.drawable.midi_white);
@@ -174,19 +167,19 @@ public class XYPad extends View implements SensorEventListener{
 			canvas.drawRect(0, 0, getWidth(), getHeight(), fill);
 		}
 		
-		// Axis
-		canvas.drawLine(50, getHeight()-50, getWidth()-50, getHeight()-50, coordinat);
-		canvas.drawLine(50, 50, 50, getHeight()-50, coordinat);
-		
-		// Top Arrow
-		canvas.drawLine(50, 50, 30, 70, coordinat);
-		canvas.drawLine(50, 50, 70, 70, coordinat);
-		
-		// Right Arrow
-		canvas.drawLine(getWidth()-50, getHeight()-50, getWidth()-70, getHeight()-70, coordinat);
-		canvas.drawLine(getWidth()-50, getHeight()-50, getWidth()-70, getHeight()-30, coordinat);
-		
-		canvas.drawText("String", getWidth()-200, getHeight()-20, text);
+//		// Axis
+//		canvas.drawLine(50, getHeight()-50, getWidth()-50, getHeight()-50, coordinat);
+//		canvas.drawLine(50, 50, 50, getHeight()-50, coordinat);
+//		
+//		// Top Arrow
+//		canvas.drawLine(50, 50, 30, 70, coordinat);
+//		canvas.drawLine(50, 50, 70, 70, coordinat);
+//		
+//		// Right Arrow
+//		canvas.drawLine(getWidth()-50, getHeight()-50, getWidth()-70, getHeight()-70, coordinat);
+//		canvas.drawLine(getWidth()-50, getHeight()-50, getWidth()-70, getHeight()-30, coordinat);
+//		
+//		canvas.drawText("String", getWidth()-200, getHeight()-20, text);
 		
 		if (controllerNumber_z != -1) {
 			float tmp_znd = Math.max(150, Math.min((float)distance, 500));
@@ -199,6 +192,8 @@ public class XYPad extends View implements SensorEventListener{
 		
 		midi = Bitmap.createScaledBitmap(raw_midi, (int)180, (int)180, false);
 		canvas.drawBitmap(midi, x-midi.getWidth()/2, y-midi.getHeight()/2, new Paint());
+		
+		Log.d("so", getWidth() + ": " + getHeight());
 	}
 	
 	@Override
@@ -212,7 +207,7 @@ public class XYPad extends View implements SensorEventListener{
 			float tmp_z = (float) (distance-150) / 350;
 //			tmp_z = Math.max(0, Math.min(tmp_z, 1));
 //			tmp_z = Math.abs(tmp_z-1);
-			int value_z = (int) Math.max(0, Math.min(tmp_z * 0x7F, 0x7F));
+			value_z = (int) Math.max(0, Math.min(tmp_z * 0x7F, 0x7F));
 			sendControlChange(value_z, channelNumber, controllerNumber_z);
 			Log.d("bammm", String.valueOf(distance)+"  "+String.valueOf(tmp_z)+"r  "+String.valueOf(value_z));
 
@@ -224,13 +219,13 @@ public class XYPad extends View implements SensorEventListener{
 			invalidate();
 			checkBorders();
 			float tmp_x = (x-midi.getWidth()/2-10)/(getWidth()-2*10-midi.getWidth()); 		// normalize x to 0-1
-			int value_x = (int) Math.max(0, Math.min(tmp_x * 0x7F, 0x7F));							// map to MIDI scale (0-0x7F)
+			value_x = (int) Math.max(0, Math.min(tmp_x * 0x7F, 0x7F));							// map to MIDI scale (0-0x7F)
 			sendControlChange(value_x, channelNumber, controllerNumber_x);										// send control on previous parsed controllerNumber
 			
 			if (controllerNumber_y != -1) {
 				float tmp_y = (y-midi.getHeight()/2-10)/(getHeight()-2*10-midi.getHeight()); 	// normalize y to 0-1
 				tmp_y = Math.abs(tmp_y-1);																// invert scale
-				int value_y = (int) Math.max(0, Math.min(tmp_y * 0x7F, 0x7F));							// map to MIDI scale (0-0x7F)
+				value_y = (int) Math.max(0, Math.min(tmp_y * 0x7F, 0x7F));							// map to MIDI scale (0-0x7F)
 				sendControlChange(value_y, channelNumber, controllerNumber_y);										// send control on previous parsed controllerNumber
 				Log.d("caccel", String.valueOf(controllerNumber_accel));
 				Log.d("accel", String.valueOf(acceleration));
@@ -249,36 +244,14 @@ public class XYPad extends View implements SensorEventListener{
 		y = (int) Math.max(10+midi.getHeight()/2, Math.min(y, getHeight()-10-midi.getHeight()/2));
 	}
 
-	public void updateAccel(int value_accel) {
-		this.value_accel = value_accel;
-	}
-	
-//	public void updateColor(int c) {
-////			Log.d("accel", String.valueOf(value_accel));
-//			fill.setARGB(255, c*2, 255-c*2, 0);
-//			invalidate();
-//			if (acceleration) {
-//				sendControlChange(c, 3, controllerNumber_accel);
-//			}
-//	}
-
-	public void unregisterSensor(){
-		sm.unregisterListener(this);
-	}
-	
 	@Override
-	public void onAccuracyChanged(Sensor sensor, int accuracy) {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void onSensorChanged(SensorEvent event) {
-		float tmp_accel = (float) ((event.values[1])/9.6);
-		int value_accel = (int) Math.max(0, Math.min(tmp_accel * 0x7F, 0x7F));
-		fill.setARGB(255, value_accel*2, 255-value_accel*2, 0);
-		invalidate();
-		if (acceleration) {
-			sendControlChange(value_accel, channelNumber, controllerNumber_accel);
+	public int[] getValues() {
+		
+		if (controllerNumber_z !=-1) {
+			return new int[]{value_x, value_y, value_z};
+		} else {
+			return new int[]{value_x, value_y};
 		}
 	}
+
 }

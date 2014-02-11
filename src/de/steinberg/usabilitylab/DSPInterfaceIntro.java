@@ -38,8 +38,6 @@ public class DSPInterfaceIntro extends RelativeLayout{
 		Resources res = getResources();
 		Drawable t = res.getDrawable(DSPInterfaceBG); 
 		setBackgroundDrawable(t);
-//		TextView introText = (TextView) findViewById(R.id.txt_interface_intro);
-//		introText.setText(DSPInterfaceName);
 		
 		Button intro = (Button) findViewById(R.id.btn_interface_intro);
 		intro.setOnClickListener(new OnClickListener() {

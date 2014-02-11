@@ -4,30 +4,23 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.Shader.TileMode;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.flat20.fingerplay.socket.commands.midi.MidiControlChange;
 
 import de.steinberg.usabilitylab.R;
-import de.steinberg.usabilitylab.R.color;
-import de.steinberg.usabilitylab.R.styleable;
 import de.steinberg.usabilitylab.network.ConnectionManager;
 
-public class Fader extends View{
+public class Fader extends AbstractDSPInterface{
 
 	private int channel, controllerNumber, value_y = 0, lastValue = 0;
 	private Context context;
 	private AttributeSet attrs;
 	private Canvas canvas;
-	private Paint rect_blank, rect_filled, text;
+	private Paint rect_blank, rect_filled;
 	private float y = 600, tmp_y = 0;
 	
 	private ConnectionManager mConnectionManager = ConnectionManager.getInstance();
@@ -84,10 +77,6 @@ public class Fader extends View{
 		rect_filled = new Paint();
 		rect_filled.setColor(getResources().getColor(R.color.fader));
 		
-//		text = new Paint();
-//		text.setColor(Color.WHITE);
-//		text.setTextSize(50);	 
-		
 		invalidate();
 	}
 	
@@ -107,9 +96,6 @@ public class Fader extends View{
 		canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), rect_blank);
 		canvas.drawRect(10, y, canvas.getWidth()-10, canvas.getHeight()-10, rect_filled);
 		
-//		canvas.drawText(String.valueOf(y), 80, 500, text);
-//		canvas.drawText(String.valueOf(tmp_y), 80, 550, text);
-//		canvas.drawText(String.valueOf(value_y), 80, 600, text);
 	}
 	
 	@Override
@@ -130,6 +116,11 @@ public class Fader extends View{
 	private void checkBorders() {
 		
 		y = (int) Math.max(10, Math.min(y, getHeight()-10));
+	}
+	
+	@Override
+	public int[] getValues() {
+		return new int[]{value_y};
 	}
 
 }

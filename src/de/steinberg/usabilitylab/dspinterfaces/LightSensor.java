@@ -15,7 +15,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-public class LightSensor extends View implements SensorEventListener{
+public class LightSensor extends AbstractDSPInterface implements SensorEventListener{
 
 	private Context context;
 	private Bitmap sun, raw_sun;
@@ -80,5 +80,10 @@ public class LightSensor extends View implements SensorEventListener{
 			sun_size = sun_size*550+100;
 			invalidate();
 		}
+	}
+	@Override
+	public int[] getValues() {
+		// TODO Auto-generated method stub
+		return new int[]{(int)sun_size};
 	}
 }

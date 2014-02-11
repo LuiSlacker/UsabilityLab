@@ -21,7 +21,8 @@
         custom:controllerNumber_x="10"
         custom:controllerNumber_y="11"
         custom:controllerNumber_z="12"
-        custom:drawbackground="false" />
+        custom:drawbackground="false" 
+        android:tag="0"/>
 
      <LinearLayout
         android:layout_width="0dp"
@@ -37,7 +38,8 @@
             android:layout_weight="10"
             android:background="@color/interface_bg"
             custom:channelFader="3"
-            custom:controllerNumber="9" />
+            custom:controllerNumber="9" 
+            android:tag="1"/>
 
         <TextView
             android:id="@+id/textView1"

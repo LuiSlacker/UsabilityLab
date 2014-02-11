@@ -2,6 +2,8 @@ package de.steinberg.usabilitylab;
 
 import java.util.ArrayList;
 
+import de.steinberg.usabilitylab.singletons.Writer;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,17 +19,20 @@ public class AnalyseRating extends LinearLayout{
 	protected ArrayList<Object> rButtons = new ArrayList<Object>();
 	protected int[] rGroupIds;
 	
+	protected int DSPInterfaceID;
+	private Context context;
+	
 	public AnalyseRating(Context context) {
 		super(context);
-		// TODO Auto-generated constructor stub
+		this.context = context;
 	}
 	public AnalyseRating(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		// TODO Auto-generated constructor stub
+		this.context = context;
 	}
 	public AnalyseRating(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		// TODO Auto-generated constructor stub
+		this.context = context;
 	}
 
 	@Override
@@ -36,7 +41,6 @@ public class AnalyseRating extends LinearLayout{
 		for(int rGroupId:rGroupIds){
 			rGroups.add((RadioGroup) findViewById(rGroupId));
 		}
-		Log.d("size", String.valueOf(rGroups.size()));
 		super.onAttachedToWindow();
 	}
 	
@@ -48,6 +52,10 @@ public class AnalyseRating extends LinearLayout{
 		Log.d("list", String.valueOf(rButtons));
 		// if one RadioGroup has no selected RadioButton return false
 		return !rButtons.contains(null);
+	}
+	
+	public void addToHshMap(){
+		Writer.getInstance(context).addtoHashMap(DSPInterfaceID,rButtons);
 	}
 	
 	protected Object findselectedRadioButton(RadioGroup rGroup) {

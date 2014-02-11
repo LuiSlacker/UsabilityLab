@@ -1,20 +1,21 @@
 package de.steinberg.usabilitylab;
 
+import de.steinberg.usabilitylab.singletons.Writer;
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ViewFlipper;
 
 public class DSPInterfaceResult extends AnalyseRating{
 
-	private int DSPInterfaceBackground;
 	private Context context;
 	
-	public DSPInterfaceResult(Context context, int bg) {
+	public DSPInterfaceResult(Context context, int DSPInterfaceID) {
 		super(context);
-		this.DSPInterfaceBackground = bg;
 		this.context = context;
+		this.DSPInterfaceID = DSPInterfaceID;
 		init();
 	}
 	public DSPInterfaceResult(Context context, AttributeSet attrs) {
@@ -44,8 +45,13 @@ public class DSPInterfaceResult extends AnalyseRating{
 			
 			@Override
 			public void onClick(View v) {
-				if (true){ //analyseRating()
+				if (analyseRating()){ 
+					addToHshMap();
 					de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) getParent();
+					ViewFlipper rootViewFlipper = (ViewFlipper) interfaceViewFlipper.getParent();
+					if (rootViewFlipper.getDisplayedChild() == 5){
+						Writer.getInstance(context).writeToFile();
+					}
 					interfaceViewFlipper.showNext();
 					resetRadioButtons();
 				} else{

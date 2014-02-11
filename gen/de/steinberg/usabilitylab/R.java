@@ -123,37 +123,38 @@ containing a value of this type.
         public static final int radiobutton_margin_left=0x7f060002;
     }
     public static final class drawable {
-        public static final int fader_xypad=0x7f020000;
-        public static final int finishscreen=0x7f020001;
-        public static final int fourfader=0x7f020002;
-        public static final int ic_action_send_now=0x7f020003;
-        public static final int ic_action_settings=0x7f020004;
-        public static final int ic_action_volume_on=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int ir=0x7f020007;
-        public static final int light_xypad=0x7f020008;
-        public static final int midi_white=0x7f020009;
-        public static final int quest_qhigh=0x7f02000a;
-        public static final int quest_qhigh_checked=0x7f02000b;
-        public static final int quest_qsmall=0x7f02000c;
-        public static final int quest_qsmall_checked=0x7f02000d;
-        public static final int rahmen=0x7f02000e;
-        public static final int startscreen=0x7f02000f;
-        public static final int sun=0x7f020010;
-        public static final int two_xypads=0x7f020011;
-        public static final int wooden=0x7f020012;
+        public static final int arrrrow=0x7f020000;
+        public static final int fader_xypad=0x7f020001;
+        public static final int finishscreen=0x7f020002;
+        public static final int fourfader=0x7f020003;
+        public static final int ic_action_send_now=0x7f020004;
+        public static final int ic_action_settings=0x7f020005;
+        public static final int ic_action_volume_on=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int ir=0x7f020008;
+        public static final int light_xypad=0x7f020009;
+        public static final int midi_white=0x7f02000a;
+        public static final int quest_qhigh=0x7f02000b;
+        public static final int quest_qhigh_checked=0x7f02000c;
+        public static final int quest_qsmall=0x7f02000d;
+        public static final int quest_qsmall_checked=0x7f02000e;
+        public static final int rahmen=0x7f02000f;
+        public static final int startscreen=0x7f020010;
+        public static final int sun=0x7f020011;
+        public static final int two_xypads=0x7f020012;
+        public static final int wooden=0x7f020013;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a004d;
-        public static final int btn_again=0x7f0a0044;
-        public static final int btn_close=0x7f0a0045;
+        public static final int action_settings=0x7f0a0050;
+        public static final int btn_again=0x7f0a0047;
+        public static final int btn_close=0x7f0a0048;
         public static final int btn_compare=0x7f0a0003;
         public static final int btn_done=0x7f0a0004;
         public static final int btn_interface_intro=0x7f0a0006;
         public static final int btn_interface_result=0x7f0a0038;
-        public static final int btn_questionare_send=0x7f0a0048;
-        public static final int btn_settings=0x7f0a004a;
-        public static final int btn_start=0x7f0a0049;
+        public static final int btn_questionare_send=0x7f0a004b;
+        public static final int btn_settings=0x7f0a004d;
+        public static final int btn_start=0x7f0a004c;
         public static final int container=0x7f0a0002;
         public static final int divider=0x7f0a0009;
         public static final int dsp_interface_intro=0x7f0a0005;
@@ -163,10 +164,10 @@ containing a value of this type.
         public static final int fader4=0x7f0a003f;
         public static final int fader5=0x7f0a0042;
         public static final int fader6=0x7f0a0043;
-        public static final int imageView3=0x7f0a0046;
+        public static final int imageView3=0x7f0a0049;
         public static final int interfaceViewFlipper=0x7f0a0001;
-        public static final int pad1=0x7f0a004b;
-        public static final int pad2=0x7f0a004c;
+        public static final int pad1=0x7f0a004e;
+        public static final int pad2=0x7f0a004f;
         public static final int pad3=0x7f0a0041;
         public static final int question1=0x7f0a000c;
         public static final int question10=0x7f0a0029;
@@ -183,7 +184,7 @@ containing a value of this type.
         public static final int question4=0x7f0a0023;
         public static final int question4_left=0x7f0a0025;
         public static final int question4_right=0x7f0a0027;
-        public static final int question5=0x7f0a0047;
+        public static final int question5=0x7f0a004a;
         public static final int question6=0x7f0a002b;
         public static final int question7=0x7f0a002d;
         public static final int question8=0x7f0a002f;
@@ -220,6 +221,9 @@ containing a value of this type.
         public static final int textView2=0x7f0a003c;
         public static final int textView3=0x7f0a003e;
         public static final int textView4=0x7f0a0040;
+        public static final int textview1=0x7f0a0044;
+        public static final int textview2=0x7f0a0045;
+        public static final int textview3=0x7f0a0046;
         public static final int title=0x7f0a0007;
         public static final int viewFlipper1=0x7f0a0000;
     }

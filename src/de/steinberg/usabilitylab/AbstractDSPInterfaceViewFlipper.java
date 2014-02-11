@@ -8,6 +8,7 @@ public abstract class AbstractDSPInterfaceViewFlipper extends ViewFlipper{
 
 	private Context context;
 	protected int DSPInterfaceBackground;
+	protected int DSPInterfaceID;
 	
 	public AbstractDSPInterfaceViewFlipper(Context context) {
 		super(context);
@@ -28,7 +29,7 @@ public abstract class AbstractDSPInterfaceViewFlipper extends ViewFlipper{
 	protected abstract void addDSPInterface();
 	
 	private void addDSPInterfaceResult(){
-		DSPInterfaceResult interfaceResult = new DSPInterfaceResult(context, DSPInterfaceBackground);
+		DSPInterfaceResult interfaceResult = new DSPInterfaceResult(context, DSPInterfaceID);
 		addView(interfaceResult);
 	}
 

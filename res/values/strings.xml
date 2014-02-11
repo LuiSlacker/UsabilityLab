@@ -42,9 +42,11 @@
 	    <string name="statement11">It is fun to use.</string>
 	    <string name="statement12">I feel I need to have it.</string>
 		
-	    <string name="parameter1">PreDelay</string>
-	    <string name="parameter2">Reverb Time</string>
-	    <string name="parameter3">High Freqs</string>
-	    <string name="parameter4">Mix</string>
+	<string name="parameter01">Frequency</string>
+	<string name="parameter02">Gain</string>
+	<string name="parameter1">PreDelay</string>
+	<string name="parameter2">Reverb Time</string>
+	<string name="parameter3">High Freqs</string>
+	<string name="parameter4">Mix</string>
 
 </resources>

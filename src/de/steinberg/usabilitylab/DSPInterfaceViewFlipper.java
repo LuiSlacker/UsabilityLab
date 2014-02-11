@@ -3,7 +3,6 @@ package de.steinberg.usabilitylab;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.widget.ViewFlipper;
 
 public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
@@ -56,6 +55,14 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 	
 	private void mapDSPInterfaces(){
 		switch (DSPInterface) {
+		case 8:
+			DSPInterfaceBackground = R.drawable.fader_xypad;
+			DSPInterfaceID = R.layout.fader_2;  	
+			break;
+		case 9:
+			DSPInterfaceBackground = R.drawable.fader_xypad;
+			DSPInterfaceID = R.layout.single_xypad;  	
+			break;
 		case 0:
 			DSPInterfaceBackground = R.drawable.fourfader;
 			DSPInterfaceID = R.layout.fader_4; 

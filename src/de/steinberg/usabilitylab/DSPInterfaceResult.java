@@ -49,7 +49,7 @@ public class DSPInterfaceResult extends AnalyseRating{
 					addToHshMap();
 					de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) getParent();
 					ViewFlipper rootViewFlipper = (ViewFlipper) interfaceViewFlipper.getParent();
-					if (rootViewFlipper.getDisplayedChild() == 5){
+					if (rootViewFlipper.getDisplayedChild() == 7){
 						Writer.getInstance(context).writeToFile();
 					}
 					interfaceViewFlipper.showNext();

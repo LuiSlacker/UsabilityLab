@@ -49,6 +49,14 @@ public class DSPInterface extends LinearLayout{
 	private void getInterfaces() {
 		dspinterfaces = new ArrayList<AbstractDSPInterface>();
 		switch (DSPInterfaceID) {
+		case R.layout.fader_2:
+			for (int i=0;i<2;i++) {
+				dspinterfaces.add((AbstractDSPInterface) findViewWithTag(String.valueOf(i)));
+			}
+			break;
+		case R.layout.single_xypad:
+				dspinterfaces.add((AbstractDSPInterface) findViewWithTag(String.valueOf(0)));
+			break;
 		case R.layout.fader_4:
 			for (int i=0;i<4;i++) {
 				dspinterfaces.add((AbstractDSPInterface) findViewWithTag(String.valueOf(i)));

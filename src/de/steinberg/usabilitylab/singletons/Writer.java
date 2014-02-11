@@ -26,6 +26,8 @@ public class Writer {
 	private Writer(Context context){
 		this.context = context;
 		DSPInterfaces = new ArrayList<Integer>();
+		DSPInterfaces.add(R.layout.fader_2);
+		DSPInterfaces.add(R.layout.single_xypad);
 		DSPInterfaces.add(R.layout.fader_4);
 		DSPInterfaces.add(R.layout.xypad_2);
 		DSPInterfaces.add(R.layout.fader_xypad_left);

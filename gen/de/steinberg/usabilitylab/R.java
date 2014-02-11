@@ -153,7 +153,7 @@ containing a value of this type.
         public static final int wooden=0x7f020013;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a004f;
+        public static final int action_settings=0x7f0a0050;
         public static final int btn_again=0x7f0a0045;
         public static final int btn_close=0x7f0a0046;
         public static final int btn_compare=0x7f0a0001;
@@ -161,8 +161,8 @@ containing a value of this type.
         public static final int btn_interface_intro=0x7f0a0004;
         public static final int btn_interface_result=0x7f0a0036;
         public static final int btn_questionare_send=0x7f0a0049;
-        public static final int btn_settings=0x7f0a004b;
-        public static final int btn_start=0x7f0a004a;
+        public static final int btn_settings=0x7f0a004c;
+        public static final int btn_start=0x7f0a004b;
         public static final int container=0x7f0a0000;
         public static final int divider=0x7f0a0007;
         public static final int dsp_interface_intro=0x7f0a0003;
@@ -173,9 +173,10 @@ containing a value of this type.
         public static final int fader5=0x7f0a0040;
         public static final int fader6=0x7f0a0041;
         public static final int imageView3=0x7f0a0047;
-        public static final int pad1=0x7f0a004d;
-        public static final int pad2=0x7f0a004e;
+        public static final int pad1=0x7f0a004e;
+        public static final int pad2=0x7f0a004f;
         public static final int pad3=0x7f0a003f;
+        public static final int pad9=0x7f0a004a;
         public static final int question1=0x7f0a000a;
         public static final int question10=0x7f0a0027;
         public static final int question11=0x7f0a0032;
@@ -232,7 +233,7 @@ containing a value of this type.
         public static final int textview2=0x7f0a0043;
         public static final int textview3=0x7f0a0044;
         public static final int title=0x7f0a0005;
-        public static final int viewFlipper1=0x7f0a004c;
+        public static final int viewFlipper1=0x7f0a004d;
     }
     public static final class layout {
         public static final int custom_actionbar=0x7f030000;
@@ -240,17 +241,19 @@ containing a value of this type.
         public static final int custom_radiobutton2=0x7f030002;
         public static final int dsp_interface_intro=0x7f030003;
         public static final int dsp_interface_result=0x7f030004;
-        public static final int fader_4=0x7f030005;
-        public static final int fader_xypad_left=0x7f030006;
-        public static final int fader_xypad_right=0x7f030007;
-        public static final int finish_screen=0x7f030008;
-        public static final int light_xypad_left=0x7f030009;
-        public static final int light_xypad_right=0x7f03000a;
-        public static final int questionare=0x7f03000b;
-        public static final int settings_view=0x7f03000c;
-        public static final int startscreen=0x7f03000d;
-        public static final int viewflipper=0x7f03000e;
-        public static final int xypad_2=0x7f03000f;
+        public static final int fader_2=0x7f030005;
+        public static final int fader_4=0x7f030006;
+        public static final int fader_xypad_left=0x7f030007;
+        public static final int fader_xypad_right=0x7f030008;
+        public static final int finish_screen=0x7f030009;
+        public static final int light_xypad_left=0x7f03000a;
+        public static final int light_xypad_right=0x7f03000b;
+        public static final int questionare=0x7f03000c;
+        public static final int settings_view=0x7f03000d;
+        public static final int single_xypad=0x7f03000e;
+        public static final int startscreen=0x7f03000f;
+        public static final int viewflipper=0x7f030010;
+        public static final int xypad_2=0x7f030011;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -262,10 +265,12 @@ containing a value of this type.
         public static final int anchor_right=0x7f07000f;
         public static final int app_name=0x7f070000;
         public static final int hello_world=0x7f070003;
-        public static final int parameter1=0x7f07001c;
-        public static final int parameter2=0x7f07001d;
-        public static final int parameter3=0x7f07001e;
-        public static final int parameter4=0x7f07001f;
+        public static final int parameter01=0x7f07001c;
+        public static final int parameter02=0x7f07001d;
+        public static final int parameter1=0x7f07001e;
+        public static final int parameter2=0x7f07001f;
+        public static final int parameter3=0x7f070020;
+        public static final int parameter4=0x7f070021;
         public static final int question1=0x7f070005;
         public static final int question2=0x7f070006;
         public static final int question3=0x7f070007;

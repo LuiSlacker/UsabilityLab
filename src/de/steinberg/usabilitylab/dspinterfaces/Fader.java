@@ -21,7 +21,7 @@ public class Fader extends AbstractDSPInterface{
 	private AttributeSet attrs;
 	private Canvas canvas;
 	private Paint rect_blank, rect_filled;
-	private float y = 600, tmp_y = 0;
+	private float y = 1600, tmp_y = 0;
 	
 	public Fader(Context context) {
 		super(context);
@@ -74,7 +74,6 @@ public class Fader extends AbstractDSPInterface{
 		rect_filled = new Paint();
 		rect_filled.setColor(getResources().getColor(R.color.fader));
 		
-		invalidate();
 	}
 	
 	@Override

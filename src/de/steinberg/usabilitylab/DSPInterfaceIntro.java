@@ -1,19 +1,29 @@
 package de.steinberg.usabilitylab;
 
-import de.steinberg.usabilitylab.singletons.Timer;
+import com.flat20.fingerplay.socket.commands.midi.MidiNoteOn;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import de.steinberg.usabilitylab.network.ConnectionManager;
+import de.steinberg.usabilitylab.singletons.Timer;
 
 	
 public class DSPInterfaceIntro extends RelativeLayout{
 	
+	private ConnectionManager mConnectionManager = ConnectionManager.getInstance();
+	final private MidiNoteOn mNoteOn = new MidiNoteOn(); 
 	private int DSPInterfaceBG;
 	private Context context;
+	private int SPLASH_DURATION = 2000;
+	private Button intro;
+	private ProgressBar spinner;
 
 	public DSPInterfaceIntro(Context context, int background) {
 		super(context);
@@ -39,7 +49,8 @@ public class DSPInterfaceIntro extends RelativeLayout{
 		Drawable t = res.getDrawable(DSPInterfaceBG); 
 		setBackgroundDrawable(t);
 		
-		Button intro = (Button) findViewById(R.id.btn_interface_intro);
+		intro = (Button) findViewById(R.id.btn_interface_intro);
+		intro.setVisibility(GONE);
 		intro.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -47,10 +58,27 @@ public class DSPInterfaceIntro extends RelativeLayout{
 				de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) getParent();
 				interfaceViewFlipper.showNext();
 				interfaceViewFlipper.showCutomActionBar(true);
+				mNoteOn.set(0,1,0x7F);
+        		mConnectionManager.send( mNoteOn);
 				Timer.getInstance().start();
+				
 			}
 		});
+		
+		spinner = (ProgressBar) findViewById(R.id.progressBar1);
+		
 		super.onAttachedToWindow();
 	}
-
+	
+	public void loading() {
+		Handler handler = new Handler();
+		handler.postDelayed(new Runnable()
+				{
+					@Override
+					public void run() {
+						spinner.setVisibility(GONE);
+						intro.setVisibility(VISIBLE);
+					}
+				}, SPLASH_DURATION);
+	}
 }

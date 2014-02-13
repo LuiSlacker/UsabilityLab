@@ -18,6 +18,7 @@ import android.widget.ViewFlipper;
 import com.flat20.fingerplay.socket.commands.midi.MidiNoteOff;
 import com.flat20.fingerplay.socket.commands.midi.MidiNoteOn;
 
+import de.steinberg.usabilitylab.dspinterfaces.LightSensor;
 import de.steinberg.usabilitylab.network.ConnectionManager;
 import de.steinberg.usabilitylab.settings.SettingsModel;
 import de.steinberg.usabilitylab.singletons.DSPInterfaceOrderPreferences;
@@ -44,7 +45,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.viewflipper);
 		
-		// Fullscreen, Landscape and dimed SoftButtons on Activity
+		// FullScreen, Landscape and dimmed SoftButtons on Activity
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
              WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE );
@@ -73,16 +74,16 @@ public class MainActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
-					mNoteOn.set(5,60,0x7F);
+					mNoteOn.set(0,3,0x7F);
 	        		mConnectionManager.send( mNoteOn);
-	        		mNoteOff.set(5,60,0x7F);
+	        		mNoteOff.set(0,3,0x7F);
 	        		mConnectionManager.send( mNoteOff);
 	        		comparing_count++;
 					break;
 				case MotionEvent.ACTION_UP:
-					mNoteOn.set(5,60,0x7F);
+					mNoteOn.set(0,3,0x7F);
 	        		mConnectionManager.send( mNoteOn);
-					mNoteOff.set(5,60,0x7F);
+					mNoteOff.set(0,3,0x7F);
 	        		mConnectionManager.send( mNoteOff);
 					break;
 				default:
@@ -99,6 +100,10 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			
+			
+			mNoteOn.set(0,2,0x7F);
+    		mConnectionManager.send( mNoteOn);
+    		
 			// get active InterfaceViewFlipper
 			int inx = flipper.getDisplayedChild();
 			DSPInterfaceViewFlipper interfaceViewFlipper = (DSPInterfaceViewFlipper) flipper.getChildAt(inx);
@@ -107,6 +112,14 @@ public class MainActivity extends Activity {
 			int d = interfaceViewFlipper.getDisplayedChild();
 			DSPInterface dspinterface = (DSPInterface) interfaceViewFlipper.getChildAt(d);
 			int DSPInterfaceID = dspinterface.getDSPInterfaceID();
+			
+			if (DSPInterfaceID == R.layout.light_xypad_left ||
+					DSPInterfaceID == R.layout.light_xypad_right) {
+						LightSensor LightSensor = (LightSensor) dspinterface.findViewWithTag(String.valueOf(1));
+						LightSensor.unregisterListener();
+			}
+			
+			
 			ArrayList<Double> parameters = dspinterface.retrieveValues();
 			
 			// put Metrics into Writer_HashMap
@@ -121,8 +134,6 @@ public class MainActivity extends Activity {
 			
 			interfaceViewFlipper.showNext();				// display next View
 			
-//			Writer.getInstance(getApplicationContext()).writeToFile(String.valueOf(times));
-			
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
 			comparing_count = 0;
 			Log.d("list", String.valueOf(comparing_count));
@@ -130,7 +141,6 @@ public class MainActivity extends Activity {
 		}
 	});
         
-    
 }
 	
 	@Override

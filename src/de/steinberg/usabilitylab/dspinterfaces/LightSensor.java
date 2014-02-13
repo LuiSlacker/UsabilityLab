@@ -21,7 +21,7 @@ public class LightSensor extends AbstractDSPInterface implements SensorEventList
 	private Context context;
 	private AttributeSet attrs;
 	private Bitmap sun, raw_sun;
-	private float sun_size, sun_size_init;
+	private float sun_size = 550.f, sun_size_init, tmp = 1.f;
 	private Boolean calibrated = false;
 	private int value_sun, channel, controllerNumber;
 	
@@ -31,7 +31,6 @@ public class LightSensor extends AbstractDSPInterface implements SensorEventList
 	public LightSensor(Context context) {
 		super(context);
 		this.context = context;
-		this.attrs = attrs;
 		init();
 	}
 	public LightSensor(Context context, AttributeSet attrs) {
@@ -73,7 +72,6 @@ public class LightSensor extends AbstractDSPInterface implements SensorEventList
 		
 		sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
 		sensorLight = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-		registerListener();
 	}
 		
 	@Override
@@ -112,12 +110,12 @@ public class LightSensor extends AbstractDSPInterface implements SensorEventList
 //			Log.d("sun", String.valueOf("init: "+sun_size_init));
 			sun_size = event.values[0];
 //			Log.d("sun", String.valueOf("value: "+sun_size));
-			sun_size = (sun_size-20)/sun_size_init;
-			float tmp = Math.max(0, Math.min(sun_size, 1));
+			sun_size = (sun_size)/sun_size_init;
+			tmp = Math.max(0, Math.min(sun_size, 1));
 //			Log.d("sun", String.valueOf("normalized: "+sun_size));
 			value_sun= (int) Math.max(0, Math.min(tmp * 0x7F, 0x7F));
 //			Log.d("sun", String.valueOf("MIDI: "+value_sun));
-			sun_size = sun_size*550+100;
+			sun_size = tmp*550+100;
 			sendControlChange(value_sun, channel, controllerNumber);
 			
 			invalidate();

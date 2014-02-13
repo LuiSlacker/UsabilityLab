@@ -4,8 +4,10 @@ import de.steinberg.usabilitylab.singletons.Writer;
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.ViewFlipper;
 
 public class DSPInterfaceResult extends AnalyseRating{
@@ -49,7 +51,7 @@ public class DSPInterfaceResult extends AnalyseRating{
 					addToHshMap();
 					de.steinberg.usabilitylab.DSPInterfaceViewFlipper interfaceViewFlipper = (de.steinberg.usabilitylab.DSPInterfaceViewFlipper) getParent();
 					ViewFlipper rootViewFlipper = (ViewFlipper) interfaceViewFlipper.getParent();
-					if (rootViewFlipper.getDisplayedChild() == 7){
+					if (rootViewFlipper.getDisplayedChild() == rootViewFlipper.getChildCount()-2){
 						Writer.getInstance(context).writeToFile();
 					}
 					interfaceViewFlipper.showNext();
@@ -62,6 +64,18 @@ public class DSPInterfaceResult extends AnalyseRating{
 		});
 	    
 		super.onAttachedToWindow();
+	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (event.getPointerCount() == 6) {
+			for (int  rG:rGroupIds){
+				RadioGroup RG = (RadioGroup) findViewById(rG);
+				RG.check(R.id.radio0);
+			}
+		}
+		super.onTouchEvent(event);
+		return true;
 	}
 	
 }

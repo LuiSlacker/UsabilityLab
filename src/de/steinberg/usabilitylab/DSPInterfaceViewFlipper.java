@@ -1,5 +1,6 @@
 package de.steinberg.usabilitylab;
 
+import de.steinberg.usabilitylab.dspinterfaces.LightSensor;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
@@ -40,9 +41,19 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 	
 	@Override
 	public void showNext() {
+		
+		if (this.getDisplayedChild() == 0){
+			DSPInterface dspI = (DSPInterface) this.getChildAt(1);
+			if (dspI.getDSPInterfaceID() == R.layout.light_xypad_left || 
+					dspI.getDSPInterfaceID() == R.layout.light_xypad_right) {
+						LightSensor LightSensor = (LightSensor) dspI.findViewWithTag(String.valueOf(1));
+						LightSensor.registerListener();
+			}
+		}
+		
 		if (this.getDisplayedChild() == this.getChildCount()-1){
-			ViewFlipper flipper = (ViewFlipper) getParent();
-			flipper.showNext();
+			ViewFlipper rootViewFlipper = (ViewFlipper) getParent();
+			rootViewFlipper.showNext();
 		} else {
 			super.showNext();	
 		}

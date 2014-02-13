@@ -6,6 +6,7 @@
     <dimen name="radiobutton_margin_left">10dp</dimen>
     <dimen name="questionare_marginTop">30dp</dimen>
     <dimen name="parameter_textsize">30sp</dimen>
-    <dimen name="parameter_margin_top">10dp</dimen>
+    <dimen name="parameter_margin_top">4dp</dimen>
+    <dimen name="padding_bottom">4dp</dimen>
 
 </resources>

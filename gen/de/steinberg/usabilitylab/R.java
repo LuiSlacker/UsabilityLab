@@ -125,6 +125,7 @@ containing a value of this type.
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
+        public static final int padding_bottom=0x7f060006;
         public static final int parameter_margin_top=0x7f060005;
         public static final int parameter_textsize=0x7f060004;
         public static final int questionare_marginTop=0x7f060003;
@@ -147,10 +148,12 @@ containing a value of this type.
         public static final int quest_qsmall=0x7f02000d;
         public static final int quest_qsmall_checked=0x7f02000e;
         public static final int rahmen=0x7f02000f;
-        public static final int startscreen=0x7f020010;
-        public static final int sun=0x7f020011;
-        public static final int two_xypads=0x7f020012;
-        public static final int wooden=0x7f020013;
+        public static final int single_pad=0x7f020010;
+        public static final int startscreen=0x7f020011;
+        public static final int sun=0x7f020012;
+        public static final int two_xypads=0x7f020013;
+        public static final int twofader=0x7f020014;
+        public static final int wooden=0x7f020015;
     }
     public static final class id {
         public static final int action_settings=0x7f0a004f;

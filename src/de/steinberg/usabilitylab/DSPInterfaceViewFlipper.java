@@ -67,11 +67,11 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 	private void mapDSPInterfaces(){
 		switch (DSPInterface) {
 		case 8:
-			DSPInterfaceBackground = R.drawable.fader_xypad;
+			DSPInterfaceBackground = R.drawable.twofader;
 			DSPInterfaceID = R.layout.fader_2;  	
 			break;
 		case 9:
-			DSPInterfaceBackground = R.drawable.fader_xypad;
+			DSPInterfaceBackground = R.drawable.single_pad;
 			DSPInterfaceID = R.layout.single_xypad;  	
 			break;
 		case 0:

@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/btn_interface_intro"
-        android:layout_marginBottom="29dp"
-        android:layout_marginRight="58dp" />
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="28dp"
+        android:layout_marginRight="90dp" />
 
 </RelativeLayout>

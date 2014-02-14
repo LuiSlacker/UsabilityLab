@@ -46,8 +46,8 @@
                 android:tag="0"
                 custom:acceleration="false"
                 custom:channel="3"
-                custom:controllerNumber_x="10"
-                custom:controllerNumber_y="11"
+                custom:controllerNumber_x="9"
+                custom:controllerNumber_y="10"
                 custom:drawbackground="false" />
         </LinearLayout>
 

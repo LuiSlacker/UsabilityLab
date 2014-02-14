@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:paddingBottom="@dimen/padding_bottom"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/padding_bottom"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
     <LinearLayout
@@ -22,9 +22,9 @@
             android:layout_height="0dp"
             android:layout_weight="10"
             android:background="@color/interface_bg"
+            android:tag="0"
             custom:channelFader="3"
-            custom:controllerNumber="9"
-            android:tag="0" />
+            custom:controllerNumber="9" />
 
         <TextView
             android:id="@+id/textview1"
@@ -40,38 +40,39 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_weight="3"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="10" >
-
-            <de.steinberg.usabilitylab.mTextView
-                android:id="@+id/textview2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:rotation="-90"
-                android:text="@string/parameter3"
-                android:textColor="@color/white"
-                android:textSize="@dimen/parameter_textsize" />
+            android:layout_weight="10"
+            android:orientation="horizontal" >
 
             <de.steinberg.usabilitylab.dspinterfaces.XYPad
                 android:id="@+id/pad3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@color/interface_bg"
-                custom:acceleration="false"
                 android:layout_weight="10"
+                android:background="@color/interface_bg"
+                android:tag="1"
+                custom:acceleration="false"
                 custom:channel="3"
                 custom:controllerNumber_x="10"
                 custom:controllerNumber_y="11"
                 custom:controllerNumber_z="12"
-                custom:drawbackground="false" 
-                android:tag="1"/>
+                custom:drawbackground="false" />
+
+            <de.steinberg.usabilitylab.mTextView
+                android:id="@+id/textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/parameter_margin_top"
+                android:layout_gravity="center_vertical"
+                android:text="@string/parameter3"
+	            android:textColor="@color/white"
+                android:textSize="@dimen/parameter_textsize" />
         </LinearLayout>
 
         <TextView

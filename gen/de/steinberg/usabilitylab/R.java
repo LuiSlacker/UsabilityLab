@@ -156,7 +156,7 @@ containing a value of this type.
         public static final int wooden=0x7f020015;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a004f;
+        public static final int action_settings=0x7f0a0050;
         public static final int btn_again=0x7f0a0046;
         public static final int btn_close=0x7f0a0047;
         public static final int btn_compare=0x7f0a0001;
@@ -177,6 +177,7 @@ containing a value of this type.
         public static final int fader6=0x7f0a0044;
         public static final int imageView3=0x7f0a0048;
         public static final int pad3=0x7f0a0041;
+        public static final int pad4=0x7f0a004f;
         public static final int pad9=0x7f0a004b;
         public static final int progressBar1=0x7f0a0005;
         public static final int question1=0x7f0a000b;

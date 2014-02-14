@@ -6,8 +6,8 @@
     android:background="@drawable/wooden"
     android:orientation="horizontal"
     android:paddingBottom="@dimen/padding_bottom"
-    android:paddingLeft="0dp"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/padding_bottom"
+    android:paddingRight="@dimen/padding_bottom"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
     <LinearLayout
@@ -22,12 +22,12 @@
             android:layout_weight="10"
             android:orientation="horizontal" >
 
-            <TextView
+            <de.steinberg.usabilitylab.mTextView
                 android:id="@+id/textview2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:rotation="-90"
+                android:rotation="180"
                 android:text="@string/parameter2"
                 android:textColor="@color/white"
                 android:textSize="@dimen/parameter_textsize" />
@@ -37,6 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
+                android:layout_marginLeft="@dimen/padding_bottom"
                 android:background="@color/interface_bg"
                 android:tag="0"
                 custom:acceleration="false"
@@ -71,7 +72,7 @@
             android:orientation="horizontal" >
 
             <de.steinberg.usabilitylab.dspinterfaces.XYPad
-                android:id="@+id/pad3"
+                android:id="@+id/pad4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
@@ -83,12 +84,12 @@
                 custom:controllerNumber_y="12"
                 custom:drawbackground="false" />
 
-            <TextView
+            <de.steinberg.usabilitylab.mTextView
                 android:id="@+id/textview2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:rotation="90"
+                android:layout_marginLeft="@dimen/padding_bottom"
                 android:text="@string/parameter4"
                 android:textColor="@color/white"
                 android:textSize="@dimen/parameter_textsize" />

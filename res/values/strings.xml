@@ -18,13 +18,13 @@
     	
     <!-- Ratings -->
 	    <string name="rating_title">Please rate your agreement with these statements!</string>
-	    <string name="rating_subtitle">- concerning the previous Interface -</string>
+	    <string name="rating_subtitle">- concerning the previous interface and in comparison to a Desktop-DAW -</string>
 	    <string name="anchor_left">strongly disagree</string>
 	    <string name="anchor_right">strongly agree</string>
 	
 	    <!-- Usefulness -->
 	    <string name="statement1">It helps me be more productive.</string>
-	    <string name="statement2">It saves me time when i use it.</string>
+	    <string name="statement2">It saves me time when I use it.</string>
 	    <string name="statement3">It is useful.</string>
 	
 	    <!-- Ease of use -->
@@ -42,8 +42,8 @@
 	    <string name="statement11">It is fun to use.</string>
 	    <string name="statement12">I feel I need to have it.</string>
 		
-	<string name="parameter01">Frequency</string>
-	<string name="parameter02">Gain</string>
+	<string name="parameter01">Mid</string>
+	<string name="parameter02">Hi</string>
 	<string name="parameter1">PreDelay</string>
 	<string name="parameter2">Reverb Time</string>
 	<string name="parameter3">High Freqs</string>

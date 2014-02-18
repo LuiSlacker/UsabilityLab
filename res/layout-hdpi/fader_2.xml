@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wooden"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/padding_bottom"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent" 
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
+            android:id="@+id/fader1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@color/interface_bg"
+            android:tag="0"
+            custom:channelFader="3"
+            custom:controllerNumber="9" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/parameter_margin_top"
+            android:text="@string/parameter01"
+            android:textColor="@color/white"
+            android:textSize="@dimen/parameter_textsize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <de.steinberg.usabilitylab.dspinterfaces.Fader
+            android:id="@+id/fader2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@color/interface_bg"
+            android:tag="1"
+            custom:channelFader="3"
+            custom:controllerNumber="10" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/parameter_margin_top"
+            android:text="@string/parameter02"
+            android:textColor="@color/white"
+            android:textSize="@dimen/parameter_textsize" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

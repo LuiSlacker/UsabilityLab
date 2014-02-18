@@ -83,11 +83,11 @@ public class DSPInterfaceViewFlipper extends AbstractDSPInterfaceViewFlipper {
 			DSPInterfaceID = R.layout.xypad_2; 
 			break;
 		case 2:
-			DSPInterfaceBackground = R.drawable.fader_xypad;
+			DSPInterfaceBackground = (preferencedHand == 1) ? R.drawable.fader_xypad_left: R.drawable.fader_xypad;
 			DSPInterfaceID = (preferencedHand == 1) ? R.layout.fader_xypad_left : R.layout.fader_xypad_right; 	
 			break;
 		case 3:
-			DSPInterfaceBackground = R.drawable.light_xypad;
+			DSPInterfaceBackground = (preferencedHand == 1) ? R.drawable.light_xypad_left:  R.drawable.light_xypad;
 			DSPInterfaceID = (preferencedHand == 1) ? R.layout.light_xypad_left : R.layout.light_xypad_right; 
 			break;
 		default:

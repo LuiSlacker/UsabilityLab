@@ -1,5 +1,7 @@
 package de.steinberg.usabilitylab;
 
+import de.steinberg.usabilitylab.singletons.DSPInterfaceOrderPreferences;
+import de.steinberg.usabilitylab.singletons.LatinSquareFactory;
 import de.steinberg.usabilitylab.singletons.Writer;
 import android.app.Activity;
 import android.content.Context;
@@ -53,6 +55,12 @@ public class DSPInterfaceResult extends AnalyseRating{
 					ViewFlipper rootViewFlipper = (ViewFlipper) interfaceViewFlipper.getParent();
 					if (rootViewFlipper.getDisplayedChild() == rootViewFlipper.getChildCount()-2){
 						Writer.getInstance(context).writeToFile();
+						
+						int novice = LatinSquareFactory.getInstance(context).getNovice();
+						DSPInterfaceOrderPreferences.getInstance(context).saveSharedPreferences("Novice5", novice);
+						
+						int expert = LatinSquareFactory.getInstance(context).getExpert();
+						DSPInterfaceOrderPreferences.getInstance(context).saveSharedPreferences("Expert5", expert);
 					}
 					interfaceViewFlipper.showNext();
 					resetRadioButtons();

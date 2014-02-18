@@ -17,8 +17,8 @@ public class LatinSquareFactory {
 	};
 	
 	private LatinSquareFactory (Context context){
-		int tmp_novice = DSPInterfaceOrderPreferences.getInstance(context).loadSavedPreferences("Novice3");
-		int tmp_expert = DSPInterfaceOrderPreferences.getInstance(context).loadSavedPreferences("Expert3");
+		int tmp_novice = DSPInterfaceOrderPreferences.getInstance(context).loadSavedPreferences("Novice5");
+		int tmp_expert = DSPInterfaceOrderPreferences.getInstance(context).loadSavedPreferences("Expert5");
 		if (tmp_novice != -1){
 			this.novice = tmp_novice;
 		}

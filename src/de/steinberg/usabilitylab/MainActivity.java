@@ -103,6 +103,7 @@ public class MainActivity extends Activity {
 			
 			mNoteOn.set(0,2,0x7F);
     		mConnectionManager.send( mNoteOn);
+    		Log.d("counterbalanced", "stopped");
     		
 			// get active InterfaceViewFlipper
 			int inx = flipper.getDisplayedChild();
@@ -142,17 +143,6 @@ public class MainActivity extends Activity {
 	});
         
 }
-	
-	@Override
-	protected void onPause() {
-		
-		int novice = LatinSquareFactory.getInstance(getApplicationContext()).getNovice();
-		DSPInterfaceOrderPreferences.getInstance(getApplicationContext()).saveSharedPreferences("Novice3", novice);
-		
-		int expert = LatinSquareFactory.getInstance(getApplicationContext()).getExpert();
-		DSPInterfaceOrderPreferences.getInstance(getApplicationContext()).saveSharedPreferences("Expert3", expert);
-		super.onPause();
-	}
 	
 	@Override
 	protected void onResume() {

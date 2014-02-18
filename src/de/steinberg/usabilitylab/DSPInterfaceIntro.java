@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -21,7 +22,7 @@ public class DSPInterfaceIntro extends RelativeLayout{
 	final private MidiNoteOn mNoteOn = new MidiNoteOn(); 
 	private int DSPInterfaceBG;
 	private Context context;
-	private int SPLASH_DURATION = 2000;
+	private int INIT_LOADING = 2000;
 	private Button intro;
 	private ProgressBar spinner;
 
@@ -60,6 +61,7 @@ public class DSPInterfaceIntro extends RelativeLayout{
 				interfaceViewFlipper.showCutomActionBar(true);
 				mNoteOn.set(0,1,0x7F);
         		mConnectionManager.send( mNoteOn);
+        		Log.d("counterbalanced", "started");
 				Timer.getInstance().start();
 				
 			}
@@ -79,6 +81,6 @@ public class DSPInterfaceIntro extends RelativeLayout{
 						spinner.setVisibility(GONE);
 						intro.setVisibility(VISIBLE);
 					}
-				}, SPLASH_DURATION);
+				}, INIT_LOADING);
 	}
 }

@@ -26,17 +26,17 @@ public class FinishScreen extends RelativeLayout{
 	@Override
 	protected void onAttachedToWindow() {
 		
-		Button btn_again = (Button) findViewById(R.id.btn_again);
+//		Button btn_again = (Button) findViewById(R.id.btn_again);
 		if (!isInEditMode()) {
-			btn_again.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					ViewFlipper  rootViewFlipper = (ViewFlipper) getParent();
-					rootViewFlipper.removeViews(2, 4);
-					rootViewFlipper.showNext();
-				}
-			});
+//			btn_again.setOnClickListener(new OnClickListener() {
+//				
+//				@Override
+//				public void onClick(View v) {
+//					ViewFlipper  rootViewFlipper = (ViewFlipper) getParent();
+//					rootViewFlipper.removeViews(2, 4);
+//					rootViewFlipper.showNext();
+//				}
+//			});
 		
 			Button btn_close = (Button) findViewById(R.id.btn_close);
 			btn_close.setOnClickListener(new OnClickListener() {

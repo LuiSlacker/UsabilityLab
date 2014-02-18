@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.steinberg.usabilitylab.CustomActionBar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/btn_compare"
+        android:layout_width="100dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:drawableRight="@drawable/ic_action_volume_on"
+        android:drawableLeft="@drawable/ic_action_volume_on"
+        android:text="COMPARE" />
+    
+    <Button
+            android:id="@+id/btn_done"
+            android:layout_width="100dip"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:drawableRight="@drawable/ic_action_send_now"
+            android:drawableLeft="@drawable/ic_action_send_now"
+            android:text="DONE" />
+
+</de.steinberg.usabilitylab.CustomActionBar>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.steinberg.usabilitylab.StartScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/startscreen" >
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="55dp"
+        android:layout_marginRight="39dp"
+        android:drawableRight="@drawable/ic_action_send_now"
+        android:text="START"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_start"
+        android:layout_alignBottom="@+id/btn_start"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@+id/btn_start"
+        android:drawableLeft="@drawable/ic_action_settings"
+        android:text="SET UP SERVER"
+        android:textColor="#FFFFFF" />
+
+</de.steinberg.usabilitylab.StartScreen>

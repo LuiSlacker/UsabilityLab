@@ -44,9 +44,10 @@ public class Questionare extends AnalyseRating{
 	}
 	@Override
 	protected void onAttachedToWindow() {
-		rootViewFlipper = (ViewFlipper) getParent();
-		Button send = (Button) findViewById(R.id.btn_questionare_send);
-		send.setOnClickListener(new OnClickListener() {
+		if (!isInEditMode()) {
+			rootViewFlipper = (ViewFlipper) getParent();
+			Button send = (Button) findViewById(R.id.btn_questionare_send);
+			send.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -62,6 +63,7 @@ public class Questionare extends AnalyseRating{
 				rButtons.clear();
 			}
 		});
+		}
 		super.onAttachedToWindow();
 	}
 	
